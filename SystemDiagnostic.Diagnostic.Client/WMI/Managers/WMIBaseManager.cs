@@ -2,7 +2,7 @@ using System.Management;
 using SystemDiagnostic.Diagnostic.Client.WMI.Queries;
 
 namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
-{    class WMIBaseManager
+{    abstract class WMIBaseManager
     {
         protected readonly ManagementObjectSearcher _managementObjectSearcher;
 

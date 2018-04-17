@@ -8,7 +8,7 @@ using SystemDiagnostic.Diagnostic.Client.WMI.Queries;
 
 namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
 {
-    class WMIProcessorManager : WMIBaseManager,IWMIProcessorManager
+    internal class WMIProcessorManager : WMIBaseManager,IWMIProcessorManager
     {   
         public WMIProcessorManager(ManagementObjectSearcher managementObjectSearcher) 
             : base(managementObjectSearcher) { }

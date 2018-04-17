@@ -12,9 +12,9 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             using (ManagementObjectSearcher managementObjectSearcher = new ManagementObjectSearcher())
             {
-                IWMIProcessorManager processorManager = new WMIProcessorManager(managementObjectSearcher);
-                WMIProcessor processor = processorManager.Get();
-                Console.WriteLine(processor.Id , processor.Name, processor.Socket, processor.NumberOfCores, processor.Description);
+                IWMIBaseBoardManager _baseBoardManager = new WMIBaseBoardManager(managementObjectSearcher);
+                var result = _baseBoardManager.Get();
+                Console.WriteLine();
             }
         }
     }
