@@ -13,7 +13,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties
         public const string SocketDesignation = "SocketDesignation";
         public const string L2CacheSize = "L2CacheSize";
         public const string L3CacheSize = "L3CacheSize";
+
     }
-
-
 }
