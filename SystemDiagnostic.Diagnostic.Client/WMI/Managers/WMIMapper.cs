@@ -4,10 +4,11 @@ using SystemDiagnostic.Diagnostic.Client.WMI.Attributes;
 
 namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
 {
-    internal static class WMIMapper<TEntity> where TEntity : class , new()
+    internal static class WMIMapper<TEntity> where TEntity : class, new()
     {
-        public static TEntity Extract(ManagementBaseObject managementBaseObject){
-             var result = new TEntity();
+        public static TEntity Extract(ManagementBaseObject managementBaseObject)
+        {
+            var result = new TEntity();
             foreach (var property in typeof(TEntity).GetProperties())
             {
                 var wmiAttribute = (WMIAttribute)Attribute.GetCustomAttribute(property, typeof(WMIAttribute));

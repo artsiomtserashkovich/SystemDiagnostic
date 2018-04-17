@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Management;
 using SystemDiagnostic.Diagnostic.Client.WMI.Entities;
 using SystemDiagnostic.Diagnostic.Client.WMI.Interfaces;
@@ -12,9 +13,8 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             using (ManagementObjectSearcher managementObjectSearcher = new ManagementObjectSearcher())
             {
-                IWMIBaseBoardManager _baseBoardManager = new WMIBaseBoardManager(managementObjectSearcher);
-                var result = _baseBoardManager.Get();
-                Console.WriteLine();
+                IWMIDiskDriveManager wMIDiskDriveManager = new WMIDiskDriveManager(managementObjectSearcher);
+                IEnumerable<WMIDiskDrive> diskDrives = wMIDiskDriveManager.Get();
             }
         }
     }
