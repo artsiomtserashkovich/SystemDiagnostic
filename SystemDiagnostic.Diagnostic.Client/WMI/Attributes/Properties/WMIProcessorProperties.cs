@@ -4,7 +4,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties
 {
     internal static class WMIProcessorProperties
     {
-        public const string Architecture  = "Architecture";
+        public const string Architecture = "Architecture";
         public const string ProcessorId = "ProcessorId";
         public const string Name = "Name";
         public const string Description = "Description";

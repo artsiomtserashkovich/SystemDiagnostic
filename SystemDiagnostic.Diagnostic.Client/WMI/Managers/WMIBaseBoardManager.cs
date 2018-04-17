@@ -9,14 +9,14 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
 {
     internal class WMIBaseBoardManager : WMIBaseManager, IWMIBaseBoardManager
     {
-        public WMIBaseBoardManager(ManagementObjectSearcher managementObjectSearcher) 
-        : base(managementObjectSearcher){ }
+        public WMIBaseBoardManager(ManagementObjectSearcher managementObjectSearcher)
+        : base(managementObjectSearcher) { }
 
         public WMIBaseBoard Get()
-        {            
-            ManagementBaseObject result = Execute(new WMIBaseBoardQuery(entity:typeof(WMIBaseBoard)))
+        {
+            ManagementBaseObject result = Execute(new WMIBaseBoardQuery(entity: typeof(WMIBaseBoard)))
             .Cast<ManagementBaseObject>().FirstOrDefault();
-            return result == null? null :WMIMapper<WMIBaseBoard>.Extract(result);
+            return result == null ? null : WMIMapper<WMIBaseBoard>.Extract(result);
         }
     }
 }

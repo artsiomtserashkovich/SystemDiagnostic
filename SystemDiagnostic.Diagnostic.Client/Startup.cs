@@ -13,8 +13,8 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             using (ManagementObjectSearcher managementObjectSearcher = new ManagementObjectSearcher())
             {
-                IWMIDiskDriveManager wMIDiskDriveManager = new WMIDiskDriveManager(managementObjectSearcher);
-                IEnumerable<WMIDiskDrive> diskDrives = wMIDiskDriveManager.Get();
+                IWMIPhysicalMemoryManager wMIPhysicalMemoryManager = new WMIPhysicalMemoryManager(managementObjectSearcher);
+                IEnumerable<WMIPhysicalMemory> physicalMemories = wMIPhysicalMemoryManager.Get();
             }
         }
     }

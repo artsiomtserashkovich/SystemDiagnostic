@@ -8,15 +8,16 @@ using SystemDiagnostic.Diagnostic.Client.WMI.Queries;
 
 namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
 {
-    internal class WMIProcessorManager : WMIBaseManager,IWMIProcessorManager
-    {   
-        public WMIProcessorManager(ManagementObjectSearcher managementObjectSearcher) 
+    internal class WMIProcessorManager : WMIBaseManager, IWMIProcessorManager
+    {
+        public WMIProcessorManager(ManagementObjectSearcher managementObjectSearcher)
             : base(managementObjectSearcher) { }
 
-        public WMIProcessor Get(){
-            ManagementBaseObject result = Execute(new WMIProcessorQuery(entity:typeof(WMIProcessor)))
+        public WMIProcessor Get()
+        {
+            ManagementBaseObject result = Execute(new WMIProcessorQuery(entity: typeof(WMIProcessor)))
             .Cast<ManagementBaseObject>().FirstOrDefault();
-            return result == null? null :WMIMapper<WMIProcessor>.Extract(result);
+            return result == null ? null : WMIMapper<WMIProcessor>.Extract(result);
         }
     }
 }

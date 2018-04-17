@@ -7,13 +7,13 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Entities
     public class WMIBaseBoard
     {
         [WMI(WMIBaseBoardProperties.SerialNumber)]
-        public string Id {get;set;}
+        public string Id { get; set; }
 
         [WMI(WMIBaseBoardProperties.Manufacturer)]
-        public string Manufacturer {get;set;}
+        public string Manufacturer { get; set; }
 
         [WMI(WMIBaseBoardProperties.Product)]
-        public string Product {get;set;}
+        public string Product { get; set; }
 
     }
 }
