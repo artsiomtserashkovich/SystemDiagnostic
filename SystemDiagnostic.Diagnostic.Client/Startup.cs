@@ -13,8 +13,8 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             using (ManagementObjectSearcher managementObjectSearcher = new ManagementObjectSearcher())
             {
-                IWMIPhysicalMemoryManager wMIPhysicalMemoryManager = new WMIPhysicalMemoryManager(managementObjectSearcher);
-                IEnumerable<WMIPhysicalMemory> physicalMemories = wMIPhysicalMemoryManager.Get();
+                IWMIVideoControllerManager videoControllerManager = new WMIVideoControllerManager(managementObjectSearcher);
+                IEnumerable<WMIVideoController> videoController = videoControllerManager.Get();
             }
         }
     }

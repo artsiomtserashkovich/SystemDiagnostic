@@ -2,7 +2,7 @@ using System;
 
 namespace SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties
 {
-    public class WMIPhysicalMemoryProperties
+    internal class WMIPhysicalMemoryProperties
     {
         public const string Capacity = "Capacity";
         public const string Caption = "Caption";
