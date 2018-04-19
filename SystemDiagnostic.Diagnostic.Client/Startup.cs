@@ -9,12 +9,16 @@ namespace SystemDiagnostic.Diagnostic.Client
     {
         public static void Main()
         {
-            var service = new ServiceCollection();
+            IServiceCollection service = new ServiceCollection();
+            ConfigureServices(service);
+            service.
+
+        }
+
+        private static void ConfigureServices(IServiceCollection service)
+        {
             service.AddTransient<ManagementObjectSearcher>()
-                .AddTransient<IWMIManagers,WMIManagers>()
-                .BuildServiceProvider();
-            
-    
+                .AddTransient<IWMIManagers, WMIManagers>();
         }
     }
 }
