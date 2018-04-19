@@ -11,7 +11,6 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             IServiceCollection service = new ServiceCollection();
             ConfigureServices(service);
-            service.
 
         }
 
