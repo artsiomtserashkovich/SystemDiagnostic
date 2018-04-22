@@ -10,8 +10,8 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces
         int RecieveBufferLength {get;set;}
         int TimeOutPing {get;set;}
         event RecieveDataSocket RecieveDataEvent;
-        event CloseSocket SystemCloseEvent;
-        Task SendData(string data);
+        event SocketAction SystemCloseEvent;
+        Task SendData(byte[] data);
         void Disconnect();
         Task Connect();
     }
