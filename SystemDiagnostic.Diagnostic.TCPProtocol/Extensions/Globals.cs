@@ -23,7 +23,8 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Extensions
     public class NotFoundException : Exception {
         public NotFoundException(string message) : base(message) { }
     }
-    public class GenericProtocolException : Exception {
-        public GenericProtocolException(string message) : base(message) { }
+    public class TCPProtocolException : Exception {
+        public TCPProtocolException(string message) : base(message) { }
+        public TCPProtocolException(string message,Exception inner) : base(message,inner) {} 
     }
 }
