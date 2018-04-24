@@ -69,15 +69,15 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
 
                 }
                 if (sendData < 1)
-                    throw new TCPProtocolException("");
+                    throw new TCPProtocolException("Message format error.");
             }
             catch (SocketException exce)
             {
-                throw new TCPProtocolException("", exce);
+                throw new TCPProtocolException("Connection shutdown.", exce);
             }
             catch (TransferException excep)
             {
-                throw new TCPProtocolException("", excep);
+                throw new TCPProtocolException("Undefined protocol.", excep);
             }
         }
 
@@ -113,7 +113,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
             IPEndPoint endPoint = socket.RemoteEndPoint as IPEndPoint;
             clients.Add(endPoint, socket);
             StartReceivingAsync(socket);
-            KeepAliveAsync(socket);
+            Ping(socket);
             ClientConnected?.Invoke(endPoint);
         }
 
@@ -176,7 +176,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
         }
 
        
-        private async void KeepAliveAsync(Socket clientSocket)
+        private async void Ping(Socket clientSocket)
         {
             while (true)
             {

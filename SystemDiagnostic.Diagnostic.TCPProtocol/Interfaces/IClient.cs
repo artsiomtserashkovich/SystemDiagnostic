@@ -10,11 +10,13 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces
         int SendBufferLength {get;set;}
         int RecieveBufferLength {get;set;}
         int TimeOutPing {get;set;}
+        int ReconnectTime {get;set;}
+        bool isConnected {get;}
         event RecieveDataSocket RecieveDataEvent;
         event SocketAction ConnectionShutdown;
         event SocketAction Connected;
-        Task SendData(byte[] data);
+        Task SendDataAsync(byte[] data);
         void Disconnect();
-        Task Connect();
+        void Connect();
     }
 }
