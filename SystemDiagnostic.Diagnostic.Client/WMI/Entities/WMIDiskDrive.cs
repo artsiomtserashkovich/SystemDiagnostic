@@ -17,6 +17,5 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Entities
 
         [WMI(WMIDiskDriveProperties.MediaType)]
         public string MediaType { get; set; }
-
     }
 }

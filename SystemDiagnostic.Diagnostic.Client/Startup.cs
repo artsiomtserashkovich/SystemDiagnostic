@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using System.Management;
 using System.Net;
 using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+using SystemDiagnostic.Diagnostic.Client.Services;
 using SystemDiagnostic.Diagnostic.Client.WMI.Interfaces;
 using SystemDiagnostic.Diagnostic.Client.WMI.Managers;
+using SystemDiagnostic.Diagnostic.DTO.Entities;
 using SystemDiagnostic.Diagnostic.TCPProtocol.Client;
 using SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces;
 
@@ -19,7 +22,12 @@ namespace SystemDiagnostic.Diagnostic.Client
             ServiceProvider provider = service.BuildServiceProvider();
 
             IPAddress ip = IPAddress.Parse("127.0.0.1");
-            IClient client = new TCPClient(ip,1300);
+            using(IClient client = new TCPClient(ip,1300)){
+                ProcessorService processorService = provider.GetService<ProcessorService>();
+                ProcessorDTO processorDTO = processorService.GetProcessor();
+                PhysicalMemoryService physicalMemoryService = provider.GetService<PhysicalMemoryService>();
+                IEnumerable<PhysicalMemoryDTO> phisicalMemoriesDTo = physicalMemoryService.GetPhysicalMemories();
+            }
 
         }
 
@@ -27,7 +35,8 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             service.AddTransient<ManagementObjectSearcher>()
                 .AddTransient<IWMIManagers, WMIManagers>()  
-                .AddTransient<IClient,TCPClient>()
+                .AddTransient<ProcessorService>()     
+                .AddTransient<PhysicalMemoryService>()         
                 .AddAutoMapper();
         }   
     }

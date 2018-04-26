@@ -25,7 +25,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Entities
         public string Socket { get; set; }
 
         [WMI(WMIProcessorProperties.Architecture)]
-        public string Architecture { get; set; }
+        public int Architecture { get; set; }
 
         [WMI(WMIProcessorProperties.L2CacheSize)]
         public int L2Cache { get; set; }
