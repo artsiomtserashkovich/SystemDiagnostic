@@ -13,7 +13,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         public WMIProcessorManager(ManagementObjectSearcher managementObjectSearcher)
             : base(managementObjectSearcher) { }
 
-        public WMIProcessor Get()
+        public WMIProcessor GetWMIProcessor()
         {
             ManagementBaseObject result = Execute(new WMIProcessorQuery(entity: typeof(WMIProcessor)))
             .Cast<ManagementBaseObject>().FirstOrDefault();

@@ -5,6 +5,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
 {
     public interface IWMIBaseBoardManager
     {
-        WMIBaseBoard Get();
+        WMIBaseBoard GetWMIBaseBoard();
     }
 }

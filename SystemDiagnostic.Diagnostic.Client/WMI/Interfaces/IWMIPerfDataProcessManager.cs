@@ -4,8 +4,9 @@ using SystemDiagnostic.Diagnostic.Client.WMI.Entities;
 
 namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
 {
-    public interface IWMIVideoControllerManager
+    public interface IWMIPerfDataProcessManager
     {
-        IEnumerable<WMIVideoController> GetWMIVideoControllers();
+        IEnumerable<WMIPerfDataProcess> GetWMIPerfDataProcesses();
+        WMIPerfDataProcess GetWMIPerfDataProcessById(string id);
     }
 }

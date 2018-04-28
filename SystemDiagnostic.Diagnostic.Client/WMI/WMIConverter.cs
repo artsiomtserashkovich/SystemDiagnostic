@@ -22,5 +22,13 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI
              if (Enum.IsDefined(typeof(Architecture), index)) return ((Architecture)index).ToString();
             return Architecture.Other.ToString();           
         }
+
+        public static double ConvertFromBytestoMB(ulong bytessize){
+            return ((double)bytessize) / 1048576;
+        }
+
+        public static double ConvertFromBytestoGB(ulong bytessize){
+            return ((double)bytessize) / 1073741824;
+        }
     }
 }

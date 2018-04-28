@@ -12,11 +12,11 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         public WMIDiskDriveManager(ManagementObjectSearcher managementObjectSearcher)
             : base(managementObjectSearcher) { }
 
-        public IEnumerable<WMIDiskDrive> Get()
+        public IEnumerable<WMIDiskDrive> GetWMIDiskDrives()
         {
             IList<WMIDiskDrive> diskDrives = new List<WMIDiskDrive>();
             ManagementObjectCollection managementObjectCollection
-                = Execute(new WMIDiskDriveQuery(condition: "MediaType= 'Fixed hard disk media'",
+                = Execute(new WMIDiskDriveQuery(condition: "MediaType = 'Fixed hard disk media'",
                     entity: typeof(WMIDiskDrive)));
             foreach (ManagementBaseObject managementObject in managementObjectCollection)
             {

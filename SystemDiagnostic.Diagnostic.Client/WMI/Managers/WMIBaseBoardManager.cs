@@ -12,7 +12,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         public WMIBaseBoardManager(ManagementObjectSearcher managementObjectSearcher)
         : base(managementObjectSearcher) { }
 
-        public WMIBaseBoard Get()
+        public WMIBaseBoard GetWMIBaseBoard()
         {
             ManagementBaseObject result = Execute(new WMIBaseBoardQuery(entity: typeof(WMIBaseBoard)))
             .Cast<ManagementBaseObject>().FirstOrDefault();

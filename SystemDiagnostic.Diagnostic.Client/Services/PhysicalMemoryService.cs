@@ -18,7 +18,7 @@ namespace SystemDiagnostic.Diagnostic.Client.Services
         }
 
         public IEnumerable<PhysicalMemoryDTO> GetPhysicalMemories(){
-            IEnumerable<WMIPhysicalMemory> wmiPhysicalMemories = _wmiManagers.WMIPhysicalMemoryManager.Get();
+            IEnumerable<WMIPhysicalMemory> wmiPhysicalMemories = _wmiManagers.WMIPhysicalMemoryManager.GetWMIPhysicalMemories();
             return _mapper.Map<IEnumerable<WMIPhysicalMemory>,IEnumerable<PhysicalMemoryDTO>>(wmiPhysicalMemories);            
         }
     }

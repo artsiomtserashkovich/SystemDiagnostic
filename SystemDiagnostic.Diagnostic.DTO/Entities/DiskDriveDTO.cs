@@ -6,7 +6,7 @@ namespace SystemDiagnostic.Diagnostic.DTO.Entities
     {
         public string Id {get;set;}
         public string Model {get;set;}
-        public ulong Size {get;set;}
+        public double SizeGB {get;set;}
         public string MediaType {get;set;}
     }
 }

@@ -6,6 +6,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
 {
     public interface IWMIDiskDriveManager
     {
-        IEnumerable<WMIDiskDrive> Get();
+        IEnumerable<WMIDiskDrive> GetWMIDiskDrives();
     }
 }

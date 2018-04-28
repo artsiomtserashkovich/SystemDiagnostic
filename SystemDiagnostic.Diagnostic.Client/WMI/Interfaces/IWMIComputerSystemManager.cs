@@ -3,8 +3,8 @@ using SystemDiagnostic.Diagnostic.Client.WMI.Entities;
 
 namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
 {
-    public interface IWMIProcessorManager
+    public interface IWMIComputerSystemManager
     {
-        WMIProcessor GetWMIProcessor();
+        WMIComputerSystem GetComputerSystem();
     }
 }

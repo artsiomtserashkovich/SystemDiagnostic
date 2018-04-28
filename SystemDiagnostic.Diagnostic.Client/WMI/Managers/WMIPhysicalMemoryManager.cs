@@ -12,7 +12,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         public WMIPhysicalMemoryManager(ManagementObjectSearcher managementObjectSearcher)
             : base(managementObjectSearcher) { }
 
-        public IEnumerable<WMIPhysicalMemory> Get()
+        public IEnumerable<WMIPhysicalMemory> GetWMIPhysicalMemories()
         {
             IList<WMIPhysicalMemory> physicalMemories = new List<WMIPhysicalMemory>();
             ManagementObjectCollection managementObjectCollection

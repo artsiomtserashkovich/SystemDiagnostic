@@ -10,20 +10,23 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         public WMIManagers(ManagementObjectSearcher managementObjectSearcher){
             _managementObjectSearcher = managementObjectSearcher;
             WMIBaseBoardManager = new WMIBaseBoardManager(_managementObjectSearcher);
-            DiskDriveManager = new WMIDiskDriveManager(_managementObjectSearcher);
+            WMIDiskDriveManager = new WMIDiskDriveManager(_managementObjectSearcher);
             WMIPhysicalMemoryManager = new WMIPhysicalMemoryManager(_managementObjectSearcher);
             WMIProcessorManager = new WMIProcessorManager(_managementObjectSearcher);
             WMIVideoController = new WMIVideoControllerManager(_managementObjectSearcher);
+            WMIProcessManager = new WMIProcessManager(_managementObjectSearcher);
         }
         public IWMIBaseBoardManager WMIBaseBoardManager {get;}
 
-        public IWMIDiskDriveManager DiskDriveManager {get;}
+        public IWMIDiskDriveManager WMIDiskDriveManager {get;}
 
         public IWMIPhysicalMemoryManager WMIPhysicalMemoryManager {get;}
 
         public IWMIProcessorManager WMIProcessorManager {get;}
 
         public IWMIVideoControllerManager WMIVideoController {get;}
+
+        public IWMIProcessManager WMIProcessManager {get;}
 
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)
@@ -37,7 +40,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
             }
             this.disposed = true;
         }
-
         public void Dispose()
         {
             Dispose(true);

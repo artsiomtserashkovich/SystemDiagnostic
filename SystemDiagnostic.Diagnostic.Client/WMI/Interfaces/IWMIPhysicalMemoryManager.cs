@@ -6,6 +6,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
 {
     public interface IWMIPhysicalMemoryManager
     {
-        IEnumerable<WMIPhysicalMemory> Get();
+        IEnumerable<WMIPhysicalMemory> GetWMIPhysicalMemories();
     }
 }

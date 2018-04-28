@@ -12,7 +12,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         public WMIVideoControllerManager(ManagementObjectSearcher managementObjectSearcher) 
             : base(managementObjectSearcher){ }
 
-        public IEnumerable<WMIVideoController> Get()
+        public IEnumerable<WMIVideoController> GetWMIVideoControllers()
         {
             IList<WMIVideoController> videoControllers = new List<WMIVideoController>();
             ManagementObjectCollection managementObjectCollection 

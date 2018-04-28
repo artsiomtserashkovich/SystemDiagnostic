@@ -17,7 +17,7 @@ namespace SystemDiagnostic.Diagnostic.Client.Services
         }
 
         public ProcessorDTO GetProcessor(){
-            WMIProcessor wmiprocessor = _wmiManagers.WMIProcessorManager.Get();
+            WMIProcessor wmiprocessor = _wmiManagers.WMIProcessorManager.GetWMIProcessor();
             ProcessorDTO processor = _mapper.Map<WMIProcessor,ProcessorDTO>(wmiprocessor);
             processor.Architecture = WMIConverter.ConvertArchitecture(wmiprocessor.Architecture);
             return processor; 
