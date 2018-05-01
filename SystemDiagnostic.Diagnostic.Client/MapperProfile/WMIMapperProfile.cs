@@ -13,26 +13,38 @@ namespace SystemDiagnostic.Diagnostic.Client.MapperProfile
         public WMIMapperProfile()
         {
             CreateMap<WMIProcessor, ProcessorDTO>()
-            .ForMember(d => d.Id, m => m.MapFrom(k => k.Id))
-            .ForMember(d => d.ClockFrequency, m => m.MapFrom(k => k.ClockFrequency))
-            .ForMember(d => d.Description, m => m.MapFrom(k => k.Description))
-            .ForMember(d => d.Architecture, m => m.MapFrom(k => WMIConverter.ConvertArchitecture(k.Architecture)))
-            .ForMember(d => d.L2CacheSize, m => m.MapFrom(k => k.L2Cache))
-            .ForMember(d => d.L3CacheSize, m => m.MapFrom(k => k.L3Cache))
-            .ForMember(d => d.Name, m => m.MapFrom(k => k.Name))
-            .ForMember(d => d.NumberOfCores, m => m.MapFrom(k => k.NumberOfCores));
+                .ForMember(d => d.Id, m => m.MapFrom(k => k.Id))
+                .ForMember(d => d.ClockFrequency, m => m.MapFrom(k => k.ClockFrequency))
+                .ForMember(d => d.Description, m => m.MapFrom(k => k.Description))
+                .ForMember(d => d.Architecture, m => m.MapFrom(k => WMIConverter.ConvertArchitecture(k.Architecture)))
+                .ForMember(d => d.L2CacheSize, m => m.MapFrom(k => k.L2Cache))
+                .ForMember(d => d.L3CacheSize, m => m.MapFrom(k => k.L3Cache))
+                .ForMember(d => d.Name, m => m.MapFrom(k => k.Name))
+                .ForMember(d => d.NumberOfCores, m => m.MapFrom(k => k.NumberOfCores));
 
             CreateMap<WMIPhysicalMemory, PhysicalMemoryDTO>()
-            .ForMember(d => d.CapacityGB, m => m.MapFrom(
+                .ForMember(d => d.CapacityGB, m => m.MapFrom(
                     v => WMIConverter.ConvertFromBytestoGB(v.Capacity)));
 
             CreateMap<WMIDiskDrive, DiskDriveDTO>()
-            .ForMember(d => d.SizeGB,m => m.MapFrom(g => WMIConverter.ConvertFromBytestoGB(g.Size)));
+                .ForMember(d => d.SizeGB, m => m.MapFrom(g => WMIConverter.ConvertFromBytestoGB(g.Size)));
 
             CreateMap<WMIBaseBoard, MotherBoardDTO>();
 
+            CreateMap<WMIPerfDataProcess, ProcessDTO>()
+                .ForMember(d => d.PercentProcessorTime, m=> m.MapFrom(d => d.PercentProcessorTime));
+
+            CreateMap<WMIProcess, ProcessDTO>()
+                .ForMember(d => d.CreationDate, m => m.MapFrom(d => d.CreatinDate))
+                .ForMember(d => d.PeakVirtualSizeMB, m => m.MapFrom(d => WMIConverter.ConvertFromBytestoMB(d.PeakVirtualSizeBytes)))
+                .ForMember(d => d.PeakWorkingSetSizeMB, m => m.MapFrom(d => WMIConverter.ConvertFromKBtoMB(d.PeakWorkingSetSizeKB)))
+                .ForMember(d => d.ProcessId, m => m.MapFrom(d => d.Id))
+                .ForMember(d => d.VirtualSizeMB, m => m.MapFrom(d => WMIConverter.ConvertFromBytestoMB(d.VirtualSizeBytes)))
+                .ForMember(d => d.WorkingSetSizeMB, m => m.MapFrom(d => WMIConverter.ConvertFromKBtoMB(d.WorkingSetSizeKB)));
+
+
             CreateMap<WMIVideoController, VideoCardDTO>()
-            .ForMember(d => d.AdapterRAMGB, m => m.MapFrom(
+                .ForMember(d => d.AdapterRAMGB, m => m.MapFrom(
                 g => WMIConverter.ConvertFromBytestoGB(g.AdapterRAM)));
         }
     }

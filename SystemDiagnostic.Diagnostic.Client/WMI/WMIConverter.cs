@@ -27,6 +27,10 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI
             return ((double)bytessize) / 1048576;
         }
 
+        public static double ConvertFromKBtoMB(ulong kb){
+            return ((double)kb) / 1024;
+        }
+
         public static double ConvertFromBytestoGB(ulong bytessize){
             return ((double)bytessize) / 1073741824;
         }

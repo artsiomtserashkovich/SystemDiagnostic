@@ -20,25 +20,6 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             IServiceCollection service = new ServiceCollection();
             ConfigureServices(service);
-
-            ServiceProvider provider = service.BuildServiceProvider();
-
-            IPAddress ip = IPAddress.Parse("127.0.0.1");
-            using(IClient client = new TCPClient(ip,1300)){
-                ProcessService processService = provider.GetService<ProcessService>();
-                IEnumerable<WMIProcess> processes = processService.GetProcesses().OrderBy(t => t.Id);
-                VideoCardService videoCardService = provider.GetService<VideoCardService>();
-                IEnumerable<VideoCardDTO> videoCards = videoCardService.GetVideoCards();
-                ProcessorService processorService = provider.GetService<ProcessorService>();
-                ProcessorDTO processorDTO = processorService.GetProcessor();
-                PhysicalMemoryService physicalMemoryService = provider.GetService<PhysicalMemoryService>();
-                IEnumerable<PhysicalMemoryDTO> phisicalMemoriesDTo = physicalMemoryService.GetPhysicalMemories();
-                DiskDriveService diskDriveService = provider.GetService<DiskDriveService>();
-                IEnumerable<DiskDriveDTO> diskDrives = diskDriveService.GetDiskDrives();
-                MotherBoardService motherBoardService = provider.GetService<MotherBoardService>();
-                MotherBoardDTO motherBoardDTO = motherBoardService.GetBaseBoard();
-            }
-
         }
 
         private static void ConfigureServices(IServiceCollection service)
@@ -50,7 +31,7 @@ namespace SystemDiagnostic.Diagnostic.Client
                 .AddTransient<MotherBoardService>()
                 .AddTransient<PhysicalMemoryService>()  
                 .AddTransient<VideoCardService>()       
-                .AddTransient<ProcessService>()
+                .AddTransient<ProcessService>()                
                 .AddAutoMapper();
         }   
     }

@@ -6,7 +6,7 @@ using SystemDiagnostic.Diagnostic.TCPProtocol.Extensions;
 
 namespace SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces
 {
-    public interface IServer : IDisposable
+    public interface ITCPServer : IDisposable
     {
         event RecieveDataSocket RecieveDataEvent;
         event SocketAction ClientConnected;

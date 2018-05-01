@@ -17,18 +17,18 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
             IList<WMIProcess> wmiProcesses = new List<WMIProcess>();
             ManagementObjectCollection managementObjectCollection 
                 = Execute(new WMIProcessQuery());
-            foreach(ManagementBaseObject managementBaseObject in managementObjectCollection){
-                wmiProcesses.Add(WMIMapper<WMIProcess>.Extract(managementBaseObject));
-            }
+            foreach(ManagementBaseObject managementBaseObject in managementObjectCollection)
+                wmiProcesses.Add(WMIMapper<WMIProcess>.Extract(managementBaseObject));            
             return wmiProcesses;
-        }
+        }      
 
-        public WMIProcess GetWMIProcess(string id){
+        public WMIProcess GetWMIProcessById(int id)
+        {
             ManagementBaseObject result 
                 = Execute(new WMIProcessQuery(condition: $"ProcessId = '{id}'" ,
                     entity: typeof(WMIProcess))).Cast<ManagementBaseObject>()
                     .FirstOrDefault();
             return result == null? null : WMIMapper<WMIProcess>.Extract(result);
-        }   
+        }
     }
 }

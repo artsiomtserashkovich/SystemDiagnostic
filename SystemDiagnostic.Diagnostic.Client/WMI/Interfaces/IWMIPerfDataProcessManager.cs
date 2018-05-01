@@ -7,6 +7,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
     public interface IWMIPerfDataProcessManager
     {
         IEnumerable<WMIPerfDataProcess> GetWMIPerfDataProcesses();
-        WMIPerfDataProcess GetWMIPerfDataProcessById(string id);
+        WMIPerfDataProcess GetWMIPerfDataProcessById(int id);
     }
 }

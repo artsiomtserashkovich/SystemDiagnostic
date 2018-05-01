@@ -9,7 +9,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
         IWMIPhysicalMemoryManager WMIPhysicalMemoryManager {get;}
         IWMIProcessorManager WMIProcessorManager {get;}
         IWMIVideoControllerManager WMIVideoController {get;}
-
         IWMIProcessManager WMIProcessManager {get;}
+        IWMIPerfDataProcessManager WMIPerfDataProcessManager {get;}
     }
 }

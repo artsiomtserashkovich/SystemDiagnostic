@@ -4,7 +4,7 @@ using SystemDiagnostic.Diagnostic.TCPProtocol.Extensions;
 
 namespace SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces
 {
-    public interface IClient : IDisposable
+    public interface ITCPClient : IDisposable
     {
         bool AutoReconnect{get;set;}
         int SendBufferLength {get;set;}

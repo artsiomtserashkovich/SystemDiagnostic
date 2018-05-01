@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Management;
 using SystemDiagnostic.Diagnostic.Client.WMI.Entities;
 using SystemDiagnostic.Diagnostic.Client.WMI.Interfaces;
+using SystemDiagnostic.Diagnostic.Client.WMI.Queries;
 
 namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
 {
@@ -11,14 +13,23 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         public WMIPerfDataProcessManager(ManagementObjectSearcher managementObjectSearcher)
              : base(managementObjectSearcher){ }
 
-        public WMIPerfDataProcess GetWMIPerfDataProcessById(string id)
+        public WMIPerfDataProcess GetWMIPerfDataProcessById(int id)
         {
-            throw new NotImplementedException();
+            ManagementBaseObject managementBaseObject = Execute(new WMIPerfDataProcessQuery
+                ($"IDProcess = {id}",typeof(WMIPerfDataProcess)))
+                .Cast<ManagementBaseObject>().FirstOrDefault(); 
+            return managementBaseObject != null? WMIMapper<WMIPerfDataProcess>
+                .Extract(managementBaseObject) : null;
         }
 
         public IEnumerable<WMIPerfDataProcess> GetWMIPerfDataProcesses()
         {
-            throw new NotImplementedException();
+            IList<WMIPerfDataProcess> wmiPerfDataProcesses = new List<WMIPerfDataProcess>();
+            ManagementObjectCollection managementObjectCollection
+                = Execute(new WMIPerfDataProcessQuery(entity:typeof(WMIPerfDataProcess)));
+            foreach(ManagementBaseObject managementObject in managementObjectCollection)
+                wmiPerfDataProcesses.Add(WMIMapper<WMIPerfDataProcess>.Extract(managementObject));            
+            return wmiPerfDataProcesses;
         }
     }
 }

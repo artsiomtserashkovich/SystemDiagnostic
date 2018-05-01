@@ -13,24 +13,18 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Entities
         [WMI(WMIProcessProperties.Description)]
         public string Description {get;set;}
         [WMI(WMIProcessProperties.CommandLine)]
-        public string CommandLine {get;set;}
-        [WMI(WMIProcessProperties.Name)]
         public string Name {get;set;}
         [WMI(WMIProcessProperties.Caption)]
-        public string Caption {get;set;}
-        [WMI(WMIProcessProperties.ExecutablePath)]
         public string Path{get;set;}
         [WMI(WMIProcessProperties.Status)]
-        public string Status {get;set;}
-        [WMI(WMIProcessProperties.ThreadCount)]
         public int ThreadCount {get;set;}
         [WMI(WMIProcessProperties.VirtualSize)]
-        public ulong VirtualSize{get;set;}
+        public ulong VirtualSizeBytes{get;set;}
         [WMI(WMIProcessProperties.WorkingSetSize)]
-        public ulong WorkingSetSize {get;set;}
+        public ulong WorkingSetSizeKB {get;set;}
         [WMI(WMIProcessProperties.PeakVirtualSize)]
-        public ulong PeakVirtualSize {get;set;}
+        public ulong PeakVirtualSizeBytes {get;set;}
         [WMI(WMIProcessProperties.PeakWorkingSetSize)]
-        public ulong PeakWorkingSetSize {get;set;}
+        public ulong PeakWorkingSetSizeKB {get;set;}
     }
 }

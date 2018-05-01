@@ -9,6 +9,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         private readonly ManagementObjectSearcher _managementObjectSearcher;
         public WMIManagers(ManagementObjectSearcher managementObjectSearcher){
             _managementObjectSearcher = managementObjectSearcher;
+            WMIPerfDataProcessManager = new WMIPerfDataProcessManager(_managementObjectSearcher);
             WMIBaseBoardManager = new WMIBaseBoardManager(_managementObjectSearcher);
             WMIDiskDriveManager = new WMIDiskDriveManager(_managementObjectSearcher);
             WMIPhysicalMemoryManager = new WMIPhysicalMemoryManager(_managementObjectSearcher);
@@ -27,6 +28,8 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         public IWMIVideoControllerManager WMIVideoController {get;}
 
         public IWMIProcessManager WMIProcessManager {get;}
+
+        public IWMIPerfDataProcessManager WMIPerfDataProcessManager {get;}
 
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)

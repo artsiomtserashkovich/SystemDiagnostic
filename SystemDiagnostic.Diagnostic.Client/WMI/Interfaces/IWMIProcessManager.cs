@@ -7,5 +7,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
     public interface IWMIProcessManager
     {
         IEnumerable<WMIProcess> GetWMIProcesses();
+        WMIProcess GetWMIProcessById(int id);
     }
 }
