@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <ItemGroup>
-    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.DTO\SystemDiagnostic.Diagnostic.DTO.csproj" />
-    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.TCPProtocol\SystemDiagnostic.Diagnostic.TCPProtocol.csproj" />
+    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.DTO\SystemDiagnostic.Diagnostic.DTO.csproj"/>
+    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.TCPProtocol\SystemDiagnostic.Diagnostic.TCPProtocol.csproj"/>
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
+  </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
-
 </Project>

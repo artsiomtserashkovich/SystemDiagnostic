@@ -12,12 +12,12 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient.Handlers
             networkClient = client;
         }
 
-        internal ClientResponse RecieveCommand(ServerCommand serverCommand)
+        public ClientResponse RecieveCommand(ServerCommand serverCommand)
         {
             throw new NotImplementedException();
         }
 
-        internal void RecieveResponse(ServerResponse serverResponse)
+        public void RecieveResponse(ServerResponse serverResponse)
         {
             throw new NotImplementedException();
         }
