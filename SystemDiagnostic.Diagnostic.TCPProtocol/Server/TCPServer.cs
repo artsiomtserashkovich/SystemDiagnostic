@@ -10,7 +10,7 @@ using SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces;
 
 namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
 {
-    public class TCPServer : IServer
+    public class TCPServer : ITCPServer
     {
         public IEnumerable<IPEndPoint> Clients
         {

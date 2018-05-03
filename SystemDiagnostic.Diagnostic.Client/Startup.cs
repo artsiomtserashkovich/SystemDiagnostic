@@ -9,8 +9,6 @@ using SystemDiagnostic.Diagnostic.Client.WMI.Entities;
 using SystemDiagnostic.Diagnostic.Client.WMI.Interfaces;
 using SystemDiagnostic.Diagnostic.Client.WMI.Managers;
 using SystemDiagnostic.Diagnostic.DTO.Entities;
-using SystemDiagnostic.Diagnostic.TCPProtocol.Client;
-using SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces;
 
 namespace SystemDiagnostic.Diagnostic.Client
 {

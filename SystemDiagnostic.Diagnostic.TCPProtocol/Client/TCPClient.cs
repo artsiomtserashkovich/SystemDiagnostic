@@ -8,7 +8,7 @@ using SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces;
 
 namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
 {
-    public class TCPClient : IClient
+    public class TCPClient : ITCPClient
     {
 
         private Socket serverSocket;
@@ -25,9 +25,9 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
         public int TimeOutPing { get; set; }
         public int ReconnectTime { get; set; }
 
-        public TCPClient(IPAddress adress, int port)
+        public TCPClient(IPAddress address, int port)
         {
-            serverIPEndPoint = new IPEndPoint(adress, port);
+            serverIPEndPoint = new IPEndPoint(address, port);
             serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
         }
         public async Task SendDataAsync(byte[] data)

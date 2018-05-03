@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.TCPProtocol\SystemDiagnostic.Diagnostic.TCPProtocol.csproj" />
     <ProjectReference Include="..\SystemDiagnostic.Diagnostic.DTO\SystemDiagnostic.Diagnostic.DTO.csproj" />
+    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.TCPProtocol\SystemDiagnostic.Diagnostic.TCPProtocol.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
