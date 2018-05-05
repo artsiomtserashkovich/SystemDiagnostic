@@ -15,7 +15,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces
         int RecieveBufferLength {get;set;}
         int TimeOutPing {get;set;}
         IEnumerable<IPEndPoint> Clients {get;}
-        void Start(int maxBacklogConnection);
+        void Start(int maxBacklogConnection = Constans.MaxBackLogConnections);
         void Stop();
         Task SendDataAsync(byte[] data,IPEndPoint recipient);
         Task BroadCastData(byte[] data);

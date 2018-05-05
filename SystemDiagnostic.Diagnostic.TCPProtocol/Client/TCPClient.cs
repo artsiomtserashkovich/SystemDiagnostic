@@ -125,6 +125,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
 
         private async void StartListeningAsync()
         {
+            Connected?.Invoke(serverIPEndPoint);
             while(true){
                 try{
                     int dataSize = await TCPSegmentSizeFormater.ReceiveTCPSegmentSize(serverSocket);
