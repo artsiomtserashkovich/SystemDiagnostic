@@ -19,11 +19,11 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
         public event SocketAction ConnectionShutdown;
         public event SocketAction Connected;
 
-        public bool AutoReconnect { get; set; }
-        public int SendBufferLength { get; set; }
-        public int RecieveBufferLength { get; set; }
-        public int TimeOutPing { get; set; }
-        public int ReconnectTime { get; set; }
+        public bool AutoReconnect { get; set; } = true;
+        public int SendBufferLength { get; set; } = Constans.SendBufferSize;
+        public int RecieveBufferLength { get; set; } = Constans.RecieveBufferSize;
+        public int TimeOutPing { get; set; } = Constans.TimeOutPing;
+        public int ReconnectTime { get; set; } = Constans.ReconnectInterval;
 
         public TCPClient(IPAddress address, int port)
         {
