@@ -24,7 +24,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
             TCPClient.ConnectionShutdown += ConnectionLost;
         }
 
-        public void Start()
+        public void Connect()
         {
             TCPClient.Connect();
         }

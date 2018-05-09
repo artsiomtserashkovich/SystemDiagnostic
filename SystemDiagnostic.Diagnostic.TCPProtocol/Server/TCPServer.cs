@@ -102,18 +102,17 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
             Socket.Listen(MaxBacklogConnection);
             while (true)
             {
-                Task<Socket> newClient = Socket.AcceptAsync();
-                new Thread(() => AcceptClientAsync(newClient)).Start();
+                Socket newClient = Socket.Accept();
+                new Thread(() => AcceptClient(newClient)).Start();
             }
         }
 
-        private async void AcceptClientAsync(Task<Socket> clientSocket)
+        private void AcceptClient(Socket clientSocket)
         {
-            Socket socket = await clientSocket.ConfigureAwait(false);
-            IPEndPoint endPoint = socket.RemoteEndPoint as IPEndPoint;
-            clients.Add(endPoint, socket);
-            StartReceivingAsync(socket);
-            Ping(socket);
+            IPEndPoint endPoint = clientSocket.RemoteEndPoint as IPEndPoint;
+            clients.Add(endPoint, clientSocket);
+            StartReceivingAsync(clientSocket);
+            Ping(clientSocket);
             ClientConnected?.Invoke(endPoint);
         }
 
@@ -126,7 +125,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
                 {
                     int dataSize = await TCPSegmentSizeFormater.ReceiveTCPSegmentSize(clientSocket);
                     byte[] data = new byte[dataSize];
-                    ArraySegment<byte> dataSegment = new ArraySegment<byte>();
+                    ArraySegment<byte> dataSegment = new ArraySegment<byte>(data);
                     int recieveSize = 0;
                     while (recieveSize < dataSize)
                     {
@@ -134,7 +133,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
                         if (bufferSize > RecieveBufferLength)
                             bufferSize = RecieveBufferLength;
                         ArraySegment<byte> partData = dataSegment.SliceEx(recieveSize, bufferSize);
-                        recieveSize += await Socket.ReceiveAsync(partData, SocketFlags.None).ConfigureAwait(false);
+                        recieveSize += await clientSocket.ReceiveAsync(partData,SocketFlags.None).ConfigureAwait(false);
                     }
                     if (recieveSize < 1)
                         throw new TCPProtocolException("Receive transfer data was damaged.");

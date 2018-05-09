@@ -12,7 +12,7 @@ namespace SystemDiagnostic.Diagnostic.Server
             ConfigureServices(service);
             IServiceProvider serviceProvider = service.BuildServiceProvider();
             IPAddress ip = IPAddress.Parse("127.0.0.1");
-            NetworkServer.NetworkServer server = new NetworkServer.NetworkServer(ip,1045,serviceProvider);
+            NetworkServer.NetworkServer server = new NetworkServer.NetworkServer(ip,10557,serviceProvider);
             server.Start(30);
         }
 

@@ -19,6 +19,7 @@
             "internalConsoleOptions": "openOnSessionStart"
         },
         {
+            "requireExactSource": false,
             "name": ".NET Core Launch Server",
             "type": "coreclr",
             "request": "launch",

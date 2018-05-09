@@ -76,6 +76,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
                 throw new TCPProtocolException("Already connected.");
             try
             {
+                serverSocket.Connect(serverIPEndPoint);
                 new Thread(StartListeningAsync).Start();
                 new Thread(PingAsync).Start();
                 isConnected = true;

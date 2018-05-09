@@ -38,10 +38,10 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
 
         private void RecieveData(byte[] data, IPEndPoint sender){
             string dataSerialization = Encoding.ASCII.GetString(data);
-            ServerDTO serverDTO = JsonConvert.DeserializeObject<ServerDTO>(dataSerialization);
-            if(serverDTO.Type.Equals(TransferConstant.Command)){
+            ClientDTO clientDTO = JsonConvert.DeserializeObject<ClientDTO>(dataSerialization);
+            if(clientDTO.Type.Equals(TransferConstant.Command)){
                 ClientCommand clientCommand 
-                    = JsonConvert.DeserializeObject<ClientCommand>(serverDTO.Data);
+                    = JsonConvert.DeserializeObject<ClientCommand>(clientDTO.Data);
                 ClientInformation clientInformation;
                 clients.TryGetValue(sender,out clientInformation);
                 ServerResponse serverResponse = CommandHandler.RecieveClientCommand(clientInformation,clientCommand);
