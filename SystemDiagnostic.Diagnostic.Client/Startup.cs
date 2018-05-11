@@ -19,14 +19,7 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             IServiceCollection service = new ServiceCollection();
             ConfigureServices(service);
-            IPAddress ip = IPAddress.Parse("192.168.100.10");
-            NetworkClient.NetworkClient client = new NetworkClient.NetworkClient(ip,3751);
-            client.Connect();
-            ClientCommand clientCommand = new ClientCommand{
-                Command = "Test",
-                Arguments = "Hellow world"
-            };
-            client.SendClientCommand(clientCommand);
+          
         }
 
         private static void ConfigureServices(IServiceCollection service)

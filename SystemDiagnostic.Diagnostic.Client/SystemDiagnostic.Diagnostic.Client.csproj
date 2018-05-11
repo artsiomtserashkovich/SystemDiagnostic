@@ -4,14 +4,15 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.0.0-preview2-26406-04"/>
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.0-preview2-final"/>
-    <PackageReference Include="AutoMapper" Version="6.2.2"/>
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0"/>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2"/>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.0.0-preview2-26406-04" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.0-preview2-final" />
+    <PackageReference Include="AutoMapper" Version="6.2.2" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.DTO\SystemDiagnostic.Diagnostic.DTO.csproj"/>
-    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.TCPProtocol\SystemDiagnostic.Diagnostic.TCPProtocol.csproj"/>
+    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.DTO\SystemDiagnostic.Diagnostic.DTO.csproj" />
+    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.TCPProtocol\SystemDiagnostic.Diagnostic.TCPProtocol.csproj" />
+    <ProjectReference Include="..\SystemDiagnostic.Diagnostic.CommandResponseProtocol\SystemDiagnostic.Diagnostic.CommandResponseProtocol.csproj" />
   </ItemGroup>
 </Project>
