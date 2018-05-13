@@ -1,13 +1,14 @@
 using System;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 
 namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces
 {
     internal interface IClientMediator
     {
-        ICRClient CRClient {get;set;}
-        IUserInterface UserInterface {get;set;}
-        IClientResponseHandler ClientResponseHandler {get;set;}
-        IClientCommandHandler ClientCommandHandler {get;set;}
-        IScheduleManager ScheduleManager {get;set;}
+       void HandleResponse(ServerResponseDTO serverResponse);
+       ClientCommandDTO ProducingClientCommand(ClientCommandRequest ClientCommandRequest);
+       void SendClientCommand(ClientCommandDTO clientCommand);
+       void RequestForInputCommand(UserInterfaceForm commandRequest);
+       void 
     }
 }

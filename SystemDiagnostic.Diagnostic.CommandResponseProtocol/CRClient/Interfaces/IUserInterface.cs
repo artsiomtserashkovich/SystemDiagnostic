@@ -1,7 +1,8 @@
 using System;
 
-namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities{
-    public interface IUserInterface{
-        event UserAction UserInvokeCommand;  
+namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces
+{
+    public interface IUserInterface
+    {
     }
 }

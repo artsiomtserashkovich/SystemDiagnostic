@@ -1,7 +1,7 @@
 using System;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 
-namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient{
+namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities{
     internal class SendCommandInformation{
         public ClientCommandDTO Command {get;set;}
         public DateTime SendTime {get;set;}

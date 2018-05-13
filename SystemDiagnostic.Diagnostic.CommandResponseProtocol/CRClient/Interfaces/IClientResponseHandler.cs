@@ -5,5 +5,6 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interface
 {
     public interface IClientResponseHandler
     {
+        void HandlerServerResponse(ServerResponseDTO serverResponse);
     }
 }

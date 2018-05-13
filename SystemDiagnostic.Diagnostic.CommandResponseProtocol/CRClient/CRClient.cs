@@ -15,7 +15,7 @@ using SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces;
 
 namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
 {
-    public class CRClient : ICRClient
+    internal class CRClient : ICRClient
     {
         public int ResponseWaitMS { get; set; } = 100;
         public int MaxResendCount { get; set; } = 3;
@@ -24,6 +24,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
         private object commandQueueLocker = new object();
         private Thread _checkResponseThread;
         private IList<SendCommandInformation> _sendCommands;
+        private IClientMediator _clientMediator;
 
 
         public CRClient()
@@ -57,8 +58,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             ServerResponseDTO serverResponse = JsonConvert
                 .DeserializeObject<ServerResponseDTO>(responseSerialization);
             RemoveSendCommandByResponse(serverResponse);
-
-            throw new NotImplementedException("Send response to handler by mediator");
+            _clientMediator.HandleResponse(serverResponse);
         }
 
         private void SendCommand(ClientCommandDTO clientCommand)
@@ -100,6 +100,11 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
                 }
                 Thread.Sleep(CheckCommandUpdateMS);
             }
+        }
+        
+        public void Dispose()
+        {
+            _TCPClient.Dispose();
         }
     }
 }
