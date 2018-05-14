@@ -1,14 +1,16 @@
 using System;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 
 namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces
 {
-    internal interface IClientMediator
+    public interface IClientMediator
     {
-       void HandleResponse(ServerResponseDTO serverResponse);
-       ClientCommandDTO ProducingClientCommand(ClientCommandRequest ClientCommandRequest);
-       void SendClientCommand(ClientCommandDTO clientCommand);
-       void RequestForInputCommand(UserInterfaceForm commandRequest);
-       void 
+        void HandleResponse(ServerResponseDTO serverResponse);
+        ClientCommandDTO ProducingClientCommand(ClientCommandRequest ClientCommandRequest);
+        void SendClientCommand(ClientCommandDTO clientCommand);
+        void OutputUIMessage(UIOutputModel messageModel);
+        ClientCommandRequest UIInputCommand(UIOutputModel inputModel);
+        
     }
 }

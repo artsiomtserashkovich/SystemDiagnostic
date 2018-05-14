@@ -2,8 +2,11 @@ using System;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 
-namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces{
+namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces
+{
     public interface IClientCommandHandler
     {
+        void SetClientMediator(IClientMediator clientMediator);
+        ClientCommandDTO HandleClientCommandRequest(ClientCommandRequest clientCommandRequest,ClientLoginModel clientLoginModel);
     }
 }

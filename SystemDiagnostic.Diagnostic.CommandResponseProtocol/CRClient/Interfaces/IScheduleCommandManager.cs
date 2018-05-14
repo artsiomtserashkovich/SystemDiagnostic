@@ -2,8 +2,8 @@ using System;
 
 namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces
 {
-    public interface IClient : IDisposable, IClientMediator
+    public interface IScheduleCommandManager
     {
-        void Start();
+        void SetClientMediator(IClientMediator clientMediator);
     }
 }

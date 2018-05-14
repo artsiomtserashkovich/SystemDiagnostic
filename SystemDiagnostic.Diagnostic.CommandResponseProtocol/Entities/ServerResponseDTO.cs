@@ -7,6 +7,6 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities
         public int Status {get;set;}
         public string Command {get;set;}
         public string IdCommand {get;set;}
-        public string DataJSON {get;set;}
+        public string SerializedData {get;set;}
     }
 }

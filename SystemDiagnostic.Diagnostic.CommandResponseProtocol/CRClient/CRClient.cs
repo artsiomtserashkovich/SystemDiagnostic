@@ -27,14 +27,16 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
         private IClientMediator _clientMediator;
 
 
-        public CRClient()
-        {            
+        public CRClient(IClientMediator clientMediator)
+        {
+            _clientMediator = clientMediator;
             _sendCommands = new List<SendCommandInformation>();
             _checkResponseThread = new Thread(CheckCommandQueue);
         }
 
-        public void Run(IPAddress address, int port){
-            _TCPClient = new TCPClient(address,port);
+        public void Run(IPAddress address, int port)
+        {
+            _TCPClient = new TCPClient(address, port);
             _TCPClient.Connect();
         }
 
@@ -44,11 +46,13 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             InitializeSendCommand(newClientCommand);
         }
 
-        private void InitializeSendCommand(ClientCommandDTO clientCommand){
-            lock(commandQueueLocker){
+        private void InitializeSendCommand(ClientCommandDTO clientCommand)
+        {
+            lock (commandQueueLocker)
+            {
                 _sendCommands.Add(new SendCommandInformation(clientCommand));
             }
-            if(_sendCommands.Count == 1 && !_checkResponseThread.IsAlive)
+            if (_sendCommands.Count == 1 && !_checkResponseThread.IsAlive)
                 _checkResponseThread.Start();
         }
 
@@ -70,11 +74,12 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
 
         private void RemoveSendCommandByResponse(ServerResponseDTO serverResponse)
         {
-            lock(commandQueueLocker){
+            lock (commandQueueLocker)
+            {
                 SendCommandInformation sendCommand = _sendCommands
                     .Where(c => c.Command.IdCommand.Equals(serverResponse.IdCommand)).FirstOrDefault();
-                if(sendCommand != null)
-                _sendCommands.Remove(sendCommand);
+                if (sendCommand != null)
+                    _sendCommands.Remove(sendCommand);
             }
         }
 
@@ -82,10 +87,10 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
         {
             while (true)
             {
-                if (_sendCommands.Count == 0)
-                    return;
                 lock (commandQueueLocker)
                 {
+                    if (_sendCommands.Count == 0)
+                        return;
                     foreach (SendCommandInformation command in _sendCommands)
                     {
                         if ((command.SendTime - DateTime.Now).Milliseconds >= ResponseWaitMS)
@@ -101,7 +106,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
                 Thread.Sleep(CheckCommandUpdateMS);
             }
         }
-        
+
         public void Dispose()
         {
             _TCPClient.Dispose();
