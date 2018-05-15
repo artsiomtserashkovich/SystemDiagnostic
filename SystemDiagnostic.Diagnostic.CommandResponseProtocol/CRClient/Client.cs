@@ -22,7 +22,6 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             IUserInterface userInferface)
         {
             _clientCommandHandler = clientCommandHandler;
-            _clientCommandHandler.SetClientMediator(this);
             _clientResponseHandler = clientResponseHandler;
             _clientResponseHandler.SetClientMediator(this);
             _scheduleCommandManager = scheduleCommandManager;
@@ -34,6 +33,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
         public void Dispose()
         {
             _crClient.Dispose();
+            _scheduleCommandManager.Dispose();
         }
 
         public void HandleResponse(ServerResponseDTO serverResponse)
@@ -85,7 +85,11 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
         {
             try
             {
-                RunInputModel runInputModel = _userInterface.InputRunProperties(new UIOutputModel { });
+                RunInputModel runInputModel = _userInterface.InputRunProperties(
+                    new UIOutputModel {
+                        Title = "Input Information to connect.",
+                        OtherInformation = ""
+                     });
                 _crClient.Run(runInputModel.IPAddress, runInputModel.Port);
                 IsRun = true;
             }

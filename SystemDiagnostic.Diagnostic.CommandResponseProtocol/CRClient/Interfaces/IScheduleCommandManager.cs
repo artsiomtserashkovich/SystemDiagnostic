@@ -1,9 +1,14 @@
 using System;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities;
 
 namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces
 {
-    public interface IScheduleCommandManager
+    public interface IScheduleCommandManager : IDisposable
     {
         void SetClientMediator(IClientMediator clientMediator);
+        void Run();
+        void Stop();
+        void AddTimer(ClientCommandRequest clientCommand,int ElapsedTimeSec);
+        bool IsStart {get;}
     }
 }

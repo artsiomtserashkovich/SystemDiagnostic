@@ -10,6 +10,11 @@ using SystemDiagnostic.Diagnostic.Client.WMI.Interfaces;
 using SystemDiagnostic.Diagnostic.Client.WMI.Managers;
 using SystemDiagnostic.Diagnostic.DTO.Entities;
 using SystemDiagnostic.Diagnostic.DTO.CommandHandlerEntities;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces;
+using SystemDiagnostic.Diagnostic.Client.NetworkClient;
+using System;
 
 namespace SystemDiagnostic.Diagnostic.Client
 {
@@ -19,7 +24,14 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             IServiceCollection service = new ServiceCollection();
             ConfigureServices(service);
-          
+            IServiceProvider serviceProvider = service.BuildServiceProvider();
+            IScheduleCommandManager scheduleCommandManager = new ScheduleCommandManager();
+            IClientResponseHandler clientResponseHandler = new ClientResponseHandler();
+            IClientCommandHandler clientCommandHandler = new ClientCommandHandler(serviceProvider);
+            IUserInterface userInterface = new UserInterface();
+            IClient client = new CommandResponseProtocol.CRClient.Client(clientCommandHandler,
+                clientResponseHandler,scheduleCommandManager,userInterface);
+            client.Start();          
         }
 
         private static void ConfigureServices(IServiceCollection service)

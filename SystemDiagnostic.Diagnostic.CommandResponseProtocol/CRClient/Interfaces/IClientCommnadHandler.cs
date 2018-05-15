@@ -6,7 +6,6 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interface
 {
     public interface IClientCommandHandler
     {
-        void SetClientMediator(IClientMediator clientMediator);
         ClientCommandDTO HandleClientCommandRequest(ClientCommandRequest clientCommandRequest,ClientLoginModel clientLoginModel);
     }
 }
