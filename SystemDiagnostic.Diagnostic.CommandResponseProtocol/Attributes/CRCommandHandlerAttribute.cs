@@ -1,6 +1,6 @@
 using System;
 
-namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Attributes
+namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.Attributes
 {
     public class CRCommandHandlerAttribute : Attribute
     {

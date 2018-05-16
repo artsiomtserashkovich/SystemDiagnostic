@@ -8,6 +8,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
 {
     public class UserInterface : IUserInterface
     {
+        private IClientMediator _clientMediator;
         public UserInterface(){}
         private object consoleLocker = new object();
         public ClientCommandRequest InputCommand(UIOutputModel outputModel)
@@ -48,9 +49,9 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
                     Console.WriteLine(outputModel.Title);
                     Console.WriteLine(outputModel.OtherInformation);
                     Console.WriteLine("Input ip address:");
-                    string ipstr =  Console.ReadLine();
+                    string ipstr =  "127.0.0.1";
                     Console.WriteLine("Input port:");
-                    string portstr = Console.ReadLine();                
+                    string portstr = "3567";
                     ErrorIp = !IPAddress.TryParse(ipstr,out ip);                
                     ErrorPort = !int.TryParse(portstr,out port); 
                 }while(ErrorIp || ErrorPort);
@@ -71,7 +72,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
 
         public void SetClientMediator(IClientMediator clientMediator)
         {
-            throw new NotImplementedException();
+            _clientMediator = clientMediator;
         }
     }
 }

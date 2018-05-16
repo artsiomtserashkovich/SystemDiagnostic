@@ -59,7 +59,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             {
                 if (ClientLogin == null)
                 {
-                    ClientLogin = _userInterface.InputLogin(new UIOutputModel { });
+                    ClientLogin = _userInterface.InputLogin(new UIOutputModel { Title = "Please authorize to send command", OtherInformation = "" });
                 }
                 return _clientCommandHandler.HandleClientCommandRequest(ClientCommandRequest, ClientLogin);
             }

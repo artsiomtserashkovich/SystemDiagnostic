@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using System.Reflection;
-using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Attributes;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Attributes;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
@@ -18,10 +18,10 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
         }
         public void HandleServerResponse(ServerResponseDTO serverResponse)
         {
-            MethodInfo handleMethod = SearchHandlerMethod(_classHandlers,serverResponse.Status);
+            MethodInfo handleMethod = SearchHandlerMethod(_classHandlers,serverResponse.Information.Status);
             if(handleMethod == null)
                 throw new ResponseHandlerException("Undefined status code of response.");
-            object[] methodArguments = new object[]{serverResponse};
+            object[] methodArguments = new object[]{serverResponse.Information};
             handleMethod.Invoke(this,methodArguments);
         }
         
@@ -38,10 +38,8 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
         }
         
         [CRResponseHandler(322)]
-        private void TestResponseHandle(ServerResponseDTO serverResponse){
-            Console.WriteLine(serverResponse.Command);
+        private void TestResponseHandle(ServerResponseInformation serverResponse){
             Console.WriteLine(serverResponse.Status);
-            Console.WriteLine(serverResponse.IdCommand);
             Console.WriteLine(serverResponse.SerializedData);
         }
 
