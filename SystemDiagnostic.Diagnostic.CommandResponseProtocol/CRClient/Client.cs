@@ -92,6 +92,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
                      });
                 _crClient.Run(runInputModel.IPAddress, runInputModel.Port);
                 IsRun = true;
+                _scheduleCommandManager.Run();
             }
             catch (Exception exception)
             {

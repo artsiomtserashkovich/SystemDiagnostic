@@ -14,9 +14,8 @@
             "args": [],
             "cwd": "${workspaceFolder}/SystemDiagnostic.Diagnostic.Client",
             // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "internalConsoleOptions": "openOnSessionStart"
+            "console": "externalTerminal",
+            "stopAtEntry": false
         },
         {
             "requireExactSource": false,
@@ -29,9 +28,8 @@
             "args": [],
             "cwd": "${workspaceFolder}/SystemDiagnostic.Diagnostic.Server",
             // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
-            "console": "internalConsole",
-            "stopAtEntry": false,
-            "internalConsoleOptions": "openOnSessionStart"
+            "console": "externalTerminal",
+            "stopAtEntry": false
         },
         {
             "name": ".NET Core Attach",

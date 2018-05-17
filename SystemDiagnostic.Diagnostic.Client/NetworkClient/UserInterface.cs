@@ -49,9 +49,9 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
                     Console.WriteLine(outputModel.Title);
                     Console.WriteLine(outputModel.OtherInformation);
                     Console.WriteLine("Input ip address:");
-                    string ipstr =  "127.0.0.1";
+                    string ipstr =  Console.ReadLine();
                     Console.WriteLine("Input port:");
-                    string portstr = "3567";
+                    string portstr = Console.ReadLine();
                     ErrorIp = !IPAddress.TryParse(ipstr,out ip);                
                     ErrorPort = !int.TryParse(portstr,out port); 
                 }while(ErrorIp || ErrorPort);

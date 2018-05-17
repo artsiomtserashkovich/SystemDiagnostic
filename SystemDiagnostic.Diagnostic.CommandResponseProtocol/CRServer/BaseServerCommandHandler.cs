@@ -20,12 +20,12 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer
             MethodInfo handleMethod = SearchHandleMethod(_handleclass, clientCommand.Command);
             if (handleMethod == null)
                 throw new ServerCommandHandleException("Undefined command");
-            ServerResponseInformation serverResponseInformation
+            ServerResponseInformation serverResponseInformation        
                 = (ServerResponseInformation)handleMethod.Invoke(this, new object[]{
                         clientCommand.Information
                     });
             return new ServerResponseDTO
-            {
+            {                
                 IdCommand = clientCommand.IdCommand,
                 Command = clientCommand.Command,
                 Information = serverResponseInformation
@@ -44,16 +44,5 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer
             return null;
         }
 
-        [CRCommandHandler("Test")]
-        protected ServerResponseInformation TestHandleMethod(ClientCommandInformation clientCommand)
-        {
-            Console.WriteLine(clientCommand.SerializedData);
-            Console.WriteLine(clientCommand.ClientLogin.Login);
-            return new ServerResponseInformation
-            {
-                Status = 322,
-                SerializedData = "Hellow world"
-            };
-        }
     }
 }

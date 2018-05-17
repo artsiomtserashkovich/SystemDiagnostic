@@ -6,7 +6,8 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities
     {
         public ClientCommandDTO(ClientCommandInformation information,string command){
             Information=information;
-            Command = Command;
+            Command = command;
+            IdCommand = Guid.NewGuid().ToString();
         }
         public string IdCommand {get;set;}
         public string Command {get;set;}

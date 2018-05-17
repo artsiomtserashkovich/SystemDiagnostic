@@ -2,6 +2,7 @@ using System;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer.Entities;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer.Interfaces;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Interfaces;
@@ -25,6 +26,12 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer
             _tcpServer = new TCPServer(iPAddress,port);
             _tcpServer.RecieveDataEvent += RecieveClientCommand;
             _tcpServer.Start(countClients);
+        }
+
+        public void Run(RunPropertyModel runPropertyModel){
+            _tcpServer = new TCPServer(runPropertyModel.IPAddress,runPropertyModel.Port);
+            _tcpServer.RecieveDataEvent += RecieveClientCommand;
+            _tcpServer.Start(runPropertyModel.ClientsCount);
         }
 
         public void BroadcastResponse(ServerResponseDTO serverResponse){

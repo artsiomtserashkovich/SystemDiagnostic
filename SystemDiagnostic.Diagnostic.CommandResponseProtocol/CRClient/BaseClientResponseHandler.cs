@@ -36,12 +36,6 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             }
             return null;
         }
-        
-        [CRResponseHandler(322)]
-        private void TestResponseHandle(ServerResponseInformation serverResponse){
-            Console.WriteLine(serverResponse.Status);
-            Console.WriteLine(serverResponse.SerializedData);
-        }
 
         public void SetClientMediator(IClientMediator clientMediator)
         {

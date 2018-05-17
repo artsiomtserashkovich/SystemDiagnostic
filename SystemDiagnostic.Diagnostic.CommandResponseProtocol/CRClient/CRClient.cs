@@ -17,9 +17,9 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
 {
     internal class CRClient : ICRClient
     {
-        public int ResponseWaitMS { get; set; } = 100;
+        public int ResponseWaitMS { get; set; } = 500;
         public int MaxResendCount { get; set; } = 3;
-        public int CheckCommandUpdateMS = 3;
+        public int CheckCommandUpdateMS {get;set;} = 100;
         private ITCPClient _TCPClient;
         private object commandQueueLocker = new object();
         private Thread _checkResponseThread;
@@ -38,6 +38,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
         {
             _TCPClient = new TCPClient(address, port);
             _TCPClient.Connect();
+            _TCPClient.RecieveDataEvent += RecieveResponse;
         }
 
         public void RecieveUserCommand(ClientCommandDTO newClientCommand)

@@ -65,7 +65,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
                     if (bufferSize > SendBufferLength)
                         bufferSize = SendBufferLength;
                     ArraySegment<byte> sliceData = dataSegment.SliceEx(sendData, bufferSize);
-                    sendData = await Socket.SendAsync(sliceData, SocketFlags.None).ConfigureAwait(false);
+                    sendData += await recipientSocket.SendAsync(sliceData, SocketFlags.None).ConfigureAwait(false);
 
                 }
                 if (sendData < 1)
@@ -110,10 +110,10 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
         private void AcceptClient(Socket clientSocket)
         {
             IPEndPoint endPoint = clientSocket.RemoteEndPoint as IPEndPoint;
-            clients.Add(endPoint, clientSocket);
-            StartReceivingAsync(clientSocket);
-            Ping(clientSocket);
+            clients.Add(endPoint, clientSocket);            
+            StartReceivingAsync(clientSocket);            
             ClientConnected?.Invoke(endPoint);
+            Ping(clientSocket);
         }
 
         private async void StartReceivingAsync(Socket clientSocket)
@@ -133,23 +133,23 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
                         if (bufferSize > RecieveBufferLength)
                             bufferSize = RecieveBufferLength;
                         ArraySegment<byte> partData = dataSegment.SliceEx(recieveSize, bufferSize);
-                        recieveSize += await clientSocket.ReceiveAsync(partData,SocketFlags.None).ConfigureAwait(false);
+                        recieveSize += await clientSocket.ReceiveAsync(partData, SocketFlags.None).ConfigureAwait(false);
                     }
                     if (recieveSize < 1)
                         throw new TCPProtocolException("Receive transfer data was damaged.");
                     RecieveDataEvent?.Invoke(dataSegment.Array, iPEndPoint);
                 }
-                catch (SocketException excep)
+                catch (SocketException)
                 {
                     bool success = DisconnectClient(iPEndPoint);
                     if (success)
-                        throw new TCPProtocolException("", excep);
+                        return;
                 }
-                catch (TransferException except)
+                catch (TransferException)
                 {
                     bool success = DisconnectClient(iPEndPoint);
                     if (success)
-                        throw new TCPProtocolException("", except);
+                        return;
                 }
             }
         }
@@ -174,16 +174,23 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
             return true;
         }
 
-       
+
         private async void Ping(Socket clientSocket)
         {
-            while (true)
+            try
             {
-                await Task.Delay(TimeOutPing).ConfigureAwait(false);
-                bool isAlive = clientSocket.Ping();
-                if (isAlive) continue;
-                DisconnectClient(clientSocket.RemoteEndPoint as IPEndPoint);
-                continue;
+                while (true)
+                {
+                    await Task.Delay(TimeOutPing).ConfigureAwait(false);
+                    bool isAlive = clientSocket.Ping();
+                    if (isAlive) continue;
+                    DisconnectClient(clientSocket.RemoteEndPoint as IPEndPoint);
+                    continue;
+                }
+            }
+            catch
+            {
+                return;
             }
         }
         #endregion        

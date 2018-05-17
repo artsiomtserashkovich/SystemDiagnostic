@@ -103,7 +103,9 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
                     return;
                 }
                 catch (SocketException)
-                {  }
+                {  
+                    
+                }
                 await Task.Delay(ReconnectTime).ConfigureAwait(false);
             }
         }
@@ -124,12 +126,12 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
             }
         }
 
-        private async void StartListeningAsync()
+        private void StartListeningAsync()
         {
             Connected?.Invoke(serverIPEndPoint);
             while(true){
                 try{
-                    int dataSize = await TCPSegmentSizeFormater.ReceiveTCPSegmentSize(serverSocket);
+                    int dataSize = TCPSegmentSizeFormater.ReceiveTCPSegmentSize(serverSocket).GetAwaiter().GetResult();
                     byte[] data =new byte[dataSize];
                     ArraySegment<byte> dataSegment= new ArraySegment<byte>(data);
                     int recievedData =0;
@@ -138,7 +140,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
                         if(lost > RecieveBufferLength )
                             lost = RecieveBufferLength;
                         ArraySegment<byte> tempSegment = dataSegment.SliceEx(recievedData,lost);
-                        recievedData += await serverSocket.ReceiveAsync(tempSegment,SocketFlags.None);
+                        recievedData += serverSocket.ReceiveAsync(tempSegment,SocketFlags.None).GetAwaiter().GetResult();
                     }
                     RecieveDataEvent?.Invoke(dataSegment.Array,serverIPEndPoint);
                 }catch(ObjectDisposedException){
@@ -146,7 +148,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
                 }catch(SocketException){
                     ConnectionShutdown?.Invoke(serverIPEndPoint);
                     if(!AutoReconnect)
-                        await Reconnect();                   
+                        Reconnect().Wait();                   
                 }
             }
         }

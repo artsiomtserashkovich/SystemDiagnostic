@@ -49,10 +49,6 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             return null;
         }
 
-        [CRCommandHandler("Test")]
-        private string TestCommandHandle(ClientCommandRequest clientCommandRequest)
-        {
-            return "Test Command";
-        }
+        
     }
 }
