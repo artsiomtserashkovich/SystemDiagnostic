@@ -24,5 +24,19 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                 SerializedData = "Hellow world"
             };
         }
+
+        [CRCommandHandler("RegisterComputerComponent")]
+        public ServerResponseInformation RegisterComputerComponentHandleMethod
+            (ClientCommandInformation clientCommand)
+        {
+            try
+            {
+                throw new NotImplementedException();
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

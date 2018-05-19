@@ -8,9 +8,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
     public class ClientResponseHandler : BaseClientResponseHandler
     {
         public ClientResponseHandler()
-            : base(typeof(ClientCommandHandler)) { }
-
-        
+            : base(typeof(ClientResponseHandler)) { }        
         
         [CRResponseHandler(322)]
         public void TestResponseHandle(ServerResponseInformation serverResponse){

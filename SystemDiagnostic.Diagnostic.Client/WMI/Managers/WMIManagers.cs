@@ -16,6 +16,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
             WMIProcessorManager = new WMIProcessorManager(_managementObjectSearcher);
             WMIVideoController = new WMIVideoControllerManager(_managementObjectSearcher);
             WMIProcessManager = new WMIProcessManager(_managementObjectSearcher);
+            WMIComputerSystemManager = new WMIComputerSystemManager(_managementObjectSearcher);
         }
         public IWMIBaseBoardManager WMIBaseBoardManager {get;}
 
@@ -30,6 +31,8 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
         public IWMIProcessManager WMIProcessManager {get;}
 
         public IWMIPerfDataProcessManager WMIPerfDataProcessManager {get;}
+
+        public IWMIComputerSystemManager WMIComputerSystemManager {get;}
 
         private bool disposed = false;
         protected virtual void Dispose(bool disposing)

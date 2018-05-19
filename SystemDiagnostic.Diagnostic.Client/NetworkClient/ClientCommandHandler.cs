@@ -19,5 +19,13 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
         {
             return "Test Command";
         }
+
+        [CRCommandHandler("RegisterComputerComponent")]
+        public string RegisterComputerComponentCommandHandle(ClientCommandRequest clientCommandRequest)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }
 }

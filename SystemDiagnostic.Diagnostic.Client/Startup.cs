@@ -14,6 +14,7 @@ using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces;
 using SystemDiagnostic.Diagnostic.Client.NetworkClient;
 using System;
+using SystemDiagnostic.Diagnostic.Client.Controllers;
 
 namespace SystemDiagnostic.Diagnostic.Client
 {
@@ -35,7 +36,7 @@ namespace SystemDiagnostic.Diagnostic.Client
         }
 
         private static void ConfigureScheduleManager(IScheduleCommandManager scheduleCommandManager){
-            scheduleCommandManager.AddTimer(new ClientCommandRequest{Command = "Test"},10, false);
+            scheduleCommandManager.AddTimer(new ClientCommandRequest{Command = "Test"},10, true);
         }
 
         private static void ConfigureServices(IServiceCollection service)
@@ -47,7 +48,12 @@ namespace SystemDiagnostic.Diagnostic.Client
                 .AddTransient<MotherBoardService>()
                 .AddTransient<PhysicalMemoryService>()  
                 .AddTransient<VideoCardService>()       
-                .AddTransient<ProcessService>()                
+                .AddTransient<ProcessService>()      
+                .AddTransient<ComputerSystenInformationService>()
+                .AddTransient<HardwareSystemInformationController>()    
+                .AddTransient<OperatingSystemInformationController>()
+                .AddTransient<HardwareSystemInformationController>()
+                .AddTransient<OperatingSystemMonitoringController>()
                 .AddAutoMapper();
         }   
     }

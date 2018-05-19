@@ -15,7 +15,7 @@ namespace SystemDiagnostic.Diagnostic.Client.Services
             _mapper = mapper;
         }
 
-        public MotherBoardDTO GetBaseBoard(){
+        public MotherBoardDTO GetMotherBoard(){
             WMIBaseBoard wmiBaseBoard = _wmimanagers.WMIBaseBoardManager.GetWMIBaseBoard();
             return _mapper.Map<WMIBaseBoard,MotherBoardDTO>(wmiBaseBoard);
         }

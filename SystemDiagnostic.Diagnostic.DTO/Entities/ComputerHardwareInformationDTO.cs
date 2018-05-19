@@ -3,10 +3,8 @@ using System.Collections.Generic;
 
 namespace SystemDiagnostic.Diagnostic.DTO.Entities
 {
-    public class ComputerDTO
+    public class ComputerHardwareInformationDTO
     {
-        
-        public string Name {get;set;}
         public ProcessorDTO Processor {get;set;}
         public MotherBoardDTO MotherBoard {get;set;}
         public IEnumerable<VideoCardDTO> VideoCards {get;set;}

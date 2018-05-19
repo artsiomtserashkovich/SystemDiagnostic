@@ -1,6 +1,6 @@
 using System;
 
-namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities
+namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Exceptions
 {
     public class SystemDiagnosticClientException : Exception
     {

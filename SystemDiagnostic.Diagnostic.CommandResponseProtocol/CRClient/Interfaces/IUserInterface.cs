@@ -11,5 +11,8 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interface
         ClientCommandRequest InputCommand(UIOutputModel outputModel);
         ClientLoginModel InputLogin(UIOutputModel outputModel);
         RunInputModel InputRunProperties(UIOutputModel outputModel);
+        RunInputModel InputRunProperties();
+        ClientLoginModel InputLogin();
+        ClientLoginModel InputLoginToRegister();
     }
 }

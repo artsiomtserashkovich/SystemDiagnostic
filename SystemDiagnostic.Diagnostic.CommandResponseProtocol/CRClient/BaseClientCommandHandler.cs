@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Attributes;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Exceptions;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 

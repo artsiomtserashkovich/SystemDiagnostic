@@ -1,5 +1,6 @@
 using System;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Exceptions;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 
@@ -59,7 +60,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             {
                 if (ClientLogin == null)
                 {
-                    ClientLogin = _userInterface.InputLogin(new UIOutputModel { Title = "Please authorize to send command", OtherInformation = "" });
+                    ClientLogin = _userInterface.InputLogin();
                 }
                 return _clientCommandHandler.HandleClientCommandRequest(ClientCommandRequest, ClientLogin);
             }
@@ -81,22 +82,32 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             }
         }
 
-        private void Run()
-        {
-            try
+        private void Run(UIOutputModel OutputMessage){
+             try
             {
-                RunInputModel runInputModel = _userInterface.InputRunProperties(
-                    new UIOutputModel {
-                        Title = "Input Information to connect.",
-                        OtherInformation = ""
-                     });
+                RunInputModel runInputModel = _userInterface.InputRunProperties(OutputMessage);
                 _crClient.Run(runInputModel.IPAddress, runInputModel.Port);
                 IsRun = true;
                 _scheduleCommandManager.Run();
             }
-            catch (Exception exception)
+            catch (CRClientException exception)
             {
-                throw new SystemDiagnosticClientException(exception, "Error while starting client.");
+                Run(new UIOutputModel{Title = exception.Message});
+            }
+        }
+
+        private void Run()
+        {
+            try
+            {
+                RunInputModel runInputModel = _userInterface.InputRunProperties();
+                _crClient.Run(runInputModel.IPAddress, runInputModel.Port);
+                IsRun = true;
+                _scheduleCommandManager.Run();
+            }
+            catch (CRClientException exception)
+            {
+                Run(new UIOutputModel{Title = exception.Message});
             }
         }
 
@@ -110,9 +121,9 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
 
         public void Start()
         {
-            if(!IsRun)
+            if (!IsRun)
                 Run();
-            else 
+            else
                 throw new SystemDiagnosticClientException("Client already start");
         }
     }

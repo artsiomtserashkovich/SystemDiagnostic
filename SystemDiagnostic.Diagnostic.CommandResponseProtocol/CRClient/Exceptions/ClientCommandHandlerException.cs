@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.Serialization;
 
-namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities
+namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Exceptions
 {
     [Serializable]
     public class ClientCommandHandlerException : Exception

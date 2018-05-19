@@ -11,5 +11,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
         IWMIVideoControllerManager WMIVideoController {get;}
         IWMIProcessManager WMIProcessManager {get;}
         IWMIPerfDataProcessManager WMIPerfDataProcessManager {get;}
+        IWMIComputerSystemManager WMIComputerSystemManager {get;}
     }
 }

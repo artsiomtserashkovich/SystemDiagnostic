@@ -5,6 +5,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
 {
     public interface IWMIComputerSystemManager
     {
-        WMIComputerSystem GetComputerSystem();
+        WMIComputerSystem GetComputerSystemInformation();
     }
 }

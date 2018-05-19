@@ -3,6 +3,7 @@ using System.Linq;
 using System.Reflection;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Attributes;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities;
+using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Exceptions;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 
@@ -20,7 +21,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
         {
             MethodInfo handleMethod = SearchHandlerMethod(_classHandlers,serverResponse.Information.Status);
             if(handleMethod == null)
-                throw new ResponseHandlerException("Undefined status code of response.");
+                throw new ClientResponseHandlerException("Undefined status code of response.");
             object[] methodArguments = new object[]{serverResponse.Information};
             handleMethod.Invoke(this,methodArguments);
         }

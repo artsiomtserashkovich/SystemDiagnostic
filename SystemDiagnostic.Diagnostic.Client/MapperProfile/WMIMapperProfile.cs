@@ -12,6 +12,12 @@ namespace SystemDiagnostic.Diagnostic.Client.MapperProfile
     {
         public WMIMapperProfile()
         {
+            CreateMap<WMIComputerSystem, ComputerSystemDTO>()
+                .ForMember(d => d.ComputerName, m => m.MapFrom(k => k.Name))
+                .ForMember(d => d.CurrentUsername, m => m.MapFrom(k => k.UserName))
+                .ForMember(d => d.DNSHostName, m => m.MapFrom(k => k.DNSHostName))
+                .ForMember(d => d.OSName, m => m.MapFrom(k => k.SystemFamily));
+
             CreateMap<WMIProcessor, ProcessorDTO>()
                 .ForMember(d => d.Id, m => m.MapFrom(k => k.Id))
                 .ForMember(d => d.ClockFrequency, m => m.MapFrom(k => k.ClockFrequency))
@@ -32,7 +38,7 @@ namespace SystemDiagnostic.Diagnostic.Client.MapperProfile
             CreateMap<WMIBaseBoard, MotherBoardDTO>();
 
             CreateMap<WMIPerfDataProcess, ProcessDTO>()
-                .ForMember(d => d.PercentProcessorTime, m=> m.MapFrom(d => d.PercentProcessorTime));
+                .ForMember(d => d.PercentProcessorTime, m => m.MapFrom(d => d.PercentProcessorTime));
 
             CreateMap<WMIProcess, ProcessDTO>()
                 .ForMember(d => d.CreationDate, m => m.MapFrom(d => d.CreatinDate))
