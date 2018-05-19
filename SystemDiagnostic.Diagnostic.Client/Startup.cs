@@ -49,7 +49,7 @@ namespace SystemDiagnostic.Diagnostic.Client
                 .AddTransient<PhysicalMemoryService>()  
                 .AddTransient<VideoCardService>()       
                 .AddTransient<ProcessService>()      
-                .AddTransient<ComputerSystenInformationService>()
+                .AddTransient<ComputerSystemInformationService>()
                 .AddTransient<HardwareSystemInformationController>()    
                 .AddTransient<OperatingSystemInformationController>()
                 .AddTransient<HardwareSystemInformationController>()

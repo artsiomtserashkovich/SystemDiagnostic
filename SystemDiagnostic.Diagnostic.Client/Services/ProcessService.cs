@@ -24,7 +24,8 @@ namespace SystemDiagnostic.Diagnostic.Client.Services
             WMIPerfDataProcess wmiPerfDataProcess = _wmimanagers.WMIPerfDataProcessManager.GetWMIPerfDataProcessById(id);
             return wmiPerfDataProcess != null? _mapper.Map<WMIPerfDataProcess,ProcessDTO>(wmiPerfDataProcess,process) : process;        
         }
-        public IEnumerable<ProcessDTO> GetProcesses (){
+       
+        public IEnumerable<ProcessDTO> GetAllProcesses(){
             IList<ProcessDTO> processes = new List<ProcessDTO>();
             IEnumerable<WMIProcess> wmiProcesses = _wmimanagers.WMIProcessManager.GetWMIProcesses();
             foreach(WMIProcess wmiProcess in wmiProcesses){
@@ -36,6 +37,18 @@ namespace SystemDiagnostic.Diagnostic.Client.Services
                 processes.Add(process);  
             }
             return processes;
+        }
+
+        public IEnumerable<ProcessDTO> GetApplications(){
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ProcessDTO> GetBackgroundProcesses(){
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ProcessDTO> GetServices(){
+            throw new NotImplementedException();
         }
     }
 }

@@ -6,12 +6,12 @@ using SystemDiagnostic.Diagnostic.DTO.Entities;
 
 namespace SystemDiagnostic.Diagnostic.Client.Services
 {
-    public class ComputerSystenInformationService
+    public class ComputerSystemInformationService
     {
         private readonly IMapper _mapper;
         private readonly IWMIManagers _wmimanagers;
 
-        public ComputerSystenInformationService(IMapper mapper,IWMIManagers wmimanagers){
+        public ComputerSystemInformationService(IMapper mapper,IWMIManagers wmimanagers){
             _mapper = mapper;
             _wmimanagers = wmimanagers;
         }
