@@ -14,8 +14,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Entities
         public int PercentProcessorTime {get;set;}
         [WMI(WMIPerfDataProcessProperties.ThreadCount)]
         public int ThreadCount {get;set;}
-        [WMI(WMIPerfDataProcessProperties.WorkingSet)]
-        public ulong WorkingSetBytes {get;set;}
         [WMI(WMIPerfDataProcessProperties.WorkingSetPeak)]
         public ulong WorkingSetPeakBytes {get;set;}
     }

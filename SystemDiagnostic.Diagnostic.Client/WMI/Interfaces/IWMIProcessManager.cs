@@ -8,5 +8,6 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Interfaces
     {
         IEnumerable<WMIProcess> GetWMIProcesses();
         WMIProcess GetWMIProcessById(int id);
+        WMIProcess GetWMIProcessByName(string name);
     }
 }

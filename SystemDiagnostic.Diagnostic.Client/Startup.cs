@@ -48,11 +48,11 @@ namespace SystemDiagnostic.Diagnostic.Client
                 .AddTransient<MotherBoardService>()
                 .AddTransient<PhysicalMemoryService>()  
                 .AddTransient<VideoCardService>()       
-                .AddTransient<ProcessService>()      
+                .AddTransient<ProcessInformationService>()
+                .AddTransient<ProcessPerfomanceService>()      
                 .AddTransient<ComputerSystemInformationService>()
                 .AddTransient<HardwareSystemInformationController>()    
                 .AddTransient<OperatingSystemInformationController>()
-                .AddTransient<HardwareSystemInformationController>()
                 .AddTransient<OperatingSystemMonitoringController>()
                 .AddAutoMapper();
         }   

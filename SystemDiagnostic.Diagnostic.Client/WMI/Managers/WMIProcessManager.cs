@@ -30,5 +30,14 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
                     .FirstOrDefault();
             return result == null? null : WMIMapper<WMIProcess>.Extract(result);
         }
+
+        public WMIProcess GetWMIProcessByName(string name)
+        {
+            ManagementBaseObject result 
+                = Execute(new WMIProcessQuery(condition: $"Name = '{name}'" ,
+                    entity: typeof(WMIProcess))).Cast<ManagementBaseObject>()
+                    .FirstOrDefault();
+            return result == null? null : WMIMapper<WMIProcess>.Extract(result);
+        }
     }
 }

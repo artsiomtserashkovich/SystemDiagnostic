@@ -22,6 +22,15 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Managers
                 .Extract(managementBaseObject) : null;
         }
 
+        public WMIPerfDataProcess GetWMIPerfDataProcessByName(string name)
+        {
+             ManagementBaseObject managementBaseObject = Execute(new WMIPerfDataProcessQuery
+                ($"Name = {name}",typeof(WMIPerfDataProcess)))
+                .Cast<ManagementBaseObject>().FirstOrDefault(); 
+            return managementBaseObject != null? WMIMapper<WMIPerfDataProcess>
+                .Extract(managementBaseObject) : null;
+        }
+
         public IEnumerable<WMIPerfDataProcess> GetWMIPerfDataProcesses()
         {
             IList<WMIPerfDataProcess> wmiPerfDataProcesses = new List<WMIPerfDataProcess>();

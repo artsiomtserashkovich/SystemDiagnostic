@@ -37,17 +37,19 @@ namespace SystemDiagnostic.Diagnostic.Client.MapperProfile
 
             CreateMap<WMIBaseBoard, MotherBoardDTO>();
 
-            CreateMap<WMIPerfDataProcess, ProcessDTO>()
-                .ForMember(d => d.PercentProcessorTime, m => m.MapFrom(d => d.PercentProcessorTime));
+            CreateMap<WMIProcess,ProcessInformationDTO>()
+                .ForMember(d => d.ProcessId, m => m.MapFrom(p => p.Id))
+                .ForMember(d => d.CreationDate, m => m.MapFrom(p => p.CreatinDate))
+                .ForMember(d => d.Description, m => m.MapFrom(p => p.Description))
+                .ForMember(d => d.Name, m => m.MapFrom(p => p.Name))
+                .ForMember(d => d.Path, m => m.MapFrom(p => p.Path))
+                .ForMember(d => d.CommandLine, m => m.MapFrom(p => p.CommandLine));
 
-            CreateMap<WMIProcess, ProcessDTO>()
-                .ForMember(d => d.CreationDate, m => m.MapFrom(d => d.CreatinDate))
-                .ForMember(d => d.PeakVirtualSizeMB, m => m.MapFrom(d => WMIConverter.ConvertFromBytestoMB(d.PeakVirtualSizeBytes)))
-                .ForMember(d => d.PeakWorkingSetSizeMB, m => m.MapFrom(d => WMIConverter.ConvertFromKBtoMB(d.PeakWorkingSetSizeKB)))
-                .ForMember(d => d.ProcessId, m => m.MapFrom(d => d.Id))
-                .ForMember(d => d.VirtualSizeMB, m => m.MapFrom(d => WMIConverter.ConvertFromBytestoMB(d.VirtualSizeBytes)))
-                .ForMember(d => d.WorkingSetSizeMB, m => m.MapFrom(d => WMIConverter.ConvertFromKBtoMB(d.WorkingSetSizeKB)));
-
+            CreateMap<WMIPerfDataProcess,ProcessPerfomanceDTO>()
+                .ForMember(d => d.ProcessId, m => m.MapFrom(p => p.Id))
+                .ForMember(d => d.PercentCPUUsage, m => m.MapFrom(p => p.PercentProcessorTime))
+                .ForMember(d => d.Name, m => m.MapFrom(p => p.Name))
+                .ForMember(d => d.RamMemoryUsageMB, m => m.MapFrom(p =>WMIConverter.ConvertFromBytestoMB(p.WorkingSetPeakBytes)));
 
             CreateMap<WMIVideoController, VideoCardDTO>()
                 .ForMember(d => d.AdapterRAMGB, m => m.MapFrom(

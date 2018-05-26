@@ -12,19 +12,13 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Entities
         public DateTime CreatinDate{get;set;}
         [WMI(WMIProcessProperties.Description)]
         public string Description {get;set;}
-        [WMI(WMIProcessProperties.CommandLine)]
+        [WMI(WMIProcessProperties.Name)]
         public string Name {get;set;}
-        [WMI(WMIProcessProperties.Caption)]
+        [WMI(WMIProcessProperties.ExecutablePath)]
         public string Path{get;set;}
-        [WMI(WMIProcessProperties.Status)]
-        public int ThreadCount {get;set;}
-        [WMI(WMIProcessProperties.VirtualSize)]
-        public ulong VirtualSizeBytes{get;set;}
-        [WMI(WMIProcessProperties.WorkingSetSize)]
-        public ulong WorkingSetSizeKB {get;set;}
-        [WMI(WMIProcessProperties.PeakVirtualSize)]
-        public ulong PeakVirtualSizeBytes {get;set;}
         [WMI(WMIProcessProperties.PeakWorkingSetSize)]
         public ulong PeakWorkingSetSizeKB {get;set;}
+        [WMI(WMIProcessProperties.CommandLine)]
+        public string CommandLine {get;set;}
     }
 }
