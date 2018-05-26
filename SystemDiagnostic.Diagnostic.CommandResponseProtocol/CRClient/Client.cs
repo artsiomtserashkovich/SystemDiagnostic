@@ -61,6 +61,8 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
                 if (ClientLogin == null)
                 {
                     ClientLogin = _userInterface.InputLogin();
+                    if (!_scheduleCommandManager.IsStart)
+                        _scheduleCommandManager.Run();
                 }
                 return _clientCommandHandler.HandleClientCommandRequest(ClientCommandRequest, ClientLogin);
             }
@@ -69,6 +71,8 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
                 throw new SystemDiagnosticClientException(exception, "");
             }
         }
+
+        public void UnAuthrorize() => ClientLogin = null;       
 
         public ClientCommandRequest UIInputCommand(UIOutputModel inputModel)
         {
@@ -103,6 +107,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
                 RunInputModel runInputModel = _userInterface.InputRunProperties();
                 _crClient.Run(runInputModel.IPAddress, runInputModel.Port);
                 IsRun = true;
+                ClientLogin = _userInterface.InputLogin();
                 _scheduleCommandManager.Run();
             }
             catch (CRClientException exception)

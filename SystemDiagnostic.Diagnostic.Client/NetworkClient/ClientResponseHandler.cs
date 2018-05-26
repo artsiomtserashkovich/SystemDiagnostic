@@ -11,9 +11,23 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
             : base(typeof(ClientResponseHandler)) { }        
         
         [CRResponseHandler(322)]
-        public void TestResponseHandle(ServerResponseInformation serverResponse){
+        public void TestResponseHandler(ServerResponseInformation serverResponse,string command){
             Console.WriteLine(serverResponse.Status);
             Console.WriteLine(serverResponse.SerializedData);
+        }
+
+        [CRResponseHandler(2)]
+        public void BadLoginResponseHandler(ServerResponseInformation serverResponse,string command)
+        {
+            _clientMediator.UnAuthrorize();
+            Console.WriteLine(serverResponse.SerializedData);
+        }
+
+        [CRResponseHandler(1)]
+        public void SuccessResponseHandler(ServerResponseInformation serverResponse, string command)
+        {
+            Console.WriteLine(DateTime.Now.ToString());
+            Console.WriteLine("Success Command" + command);
         }
     }
 }

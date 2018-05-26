@@ -37,7 +37,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
         [CRCommandHandler("GetTopPerfomanceProcesses")]
         public string GetTopPerfomanceProcessses(ClientCommandRequest clientCommandRequest){
             OperatingSystemMonitoringController operatingSystemMonitoringController
-                =(OperatingSystemMonitoringController)_serviceProvider.GetService(typeof(OperatingSystemInformationController));
+                =(OperatingSystemMonitoringController)_serviceProvider.GetService(typeof(OperatingSystemMonitoringController));
             IEnumerable<ProcessPerfomanceDTO> processPerfomanceDTO= operatingSystemMonitoringController.GetTopCPUUsageProcesses();
             return JsonConvert.SerializeObject(processPerfomanceDTO);
         }

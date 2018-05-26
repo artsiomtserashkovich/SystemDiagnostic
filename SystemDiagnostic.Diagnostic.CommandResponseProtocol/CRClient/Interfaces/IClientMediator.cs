@@ -10,6 +10,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interface
         ClientCommandDTO ProducingClientCommand(ClientCommandRequest ClientCommandRequest);
         void SendClientCommand(ClientCommandDTO clientCommand);
         void OutputUIMessage(UIOutputModel messageModel);
-        ClientCommandRequest UIInputCommand(UIOutputModel inputModel);        
+        ClientCommandRequest UIInputCommand(UIOutputModel inputModel);
+        void UnAuthrorize();
     }
 }

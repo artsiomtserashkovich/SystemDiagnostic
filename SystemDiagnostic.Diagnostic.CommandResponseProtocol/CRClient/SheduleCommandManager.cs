@@ -27,6 +27,13 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             IsStart = true;
         }
 
+        public void Stop()
+        {
+            foreach (KeyValuePair<Timer, ClientCommandRequest> kvp in _scheduleCommands)
+                kvp.Key.Stop();
+            IsStart = false;
+        }
+
         private void TimerInvoke(object sender)
         {
             lock (_timerLocker)
@@ -51,14 +58,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             timer.Elapsed += (sender, e) => TimerInvoke(sender);
             _scheduleCommands.Add(timer, clientCommand);
         }
-
-        public void Stop()
-        {
-            foreach (KeyValuePair<Timer, ClientCommandRequest> kvp in _scheduleCommands)
-                kvp.Key.Stop();
-            IsStart = false;
-        }
-
+       
         public void Dispose()
         {
             foreach (KeyValuePair<Timer, ClientCommandRequest> kvp in _scheduleCommands)

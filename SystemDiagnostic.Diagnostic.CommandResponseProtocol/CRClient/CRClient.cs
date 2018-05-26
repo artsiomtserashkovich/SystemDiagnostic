@@ -13,6 +13,7 @@ using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Interfaces;
 using SystemDiagnostic.Diagnostic.TCPProtocol.Client;
+using SystemDiagnostic.Diagnostic.TCPProtocol.Extensions;
 using SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces;
 
 namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
@@ -46,6 +47,11 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             }catch(SocketException){
                 _TCPClient.Dispose();
                 throw new CRClientException("Cant connect to server with this ip:" + address.ToString());
+            }
+            catch(TCPProtocolException exc)
+            {
+                _TCPClient.Dispose();
+                throw new CRClientException("Cant connect to server with this ip:" + address.ToString(),exc);
             }
         }
 

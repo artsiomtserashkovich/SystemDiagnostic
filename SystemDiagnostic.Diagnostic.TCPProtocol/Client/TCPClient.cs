@@ -68,6 +68,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Client
                 serverSocket?.Dispose();
             }
             catch (ObjectDisposedException) { }
+            catch (SocketException) { }
         }
 
         public void Connect()

@@ -31,30 +31,33 @@ namespace SystemDiagnostic.Diagnostic.Client
             IClientCommandHandler clientCommandHandler = new ClientCommandHandler(serviceProvider);
             IUserInterface userInterface = new UserInterface();
             IClient client = new CommandResponseProtocol.CRClient.Client(clientCommandHandler,
-                clientResponseHandler,scheduleCommandManager,userInterface);
-            client.Start();          
+                clientResponseHandler, scheduleCommandManager, userInterface);
+            client.Start();
         }
 
-        private static void ConfigureScheduleManager(IScheduleCommandManager scheduleCommandManager){
-            scheduleCommandManager.AddTimer(new ClientCommandRequest{Command = "Test"},10, true);
+        private static void ConfigureScheduleManager(IScheduleCommandManager scheduleCommandManager)
+        {
+            scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "Test" }, 10, true);
+            scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "GetComputerComponent" }, 15, true);
+            scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "GetTopPerfomanceProcesses" }, 15, true);
         }
 
         private static void ConfigureServices(IServiceCollection service)
         {
             service.AddTransient<ManagementObjectSearcher>()
-                .AddTransient<IWMIManagers, WMIManagers>()  
-                .AddTransient<ProcessorService>()     
+                .AddTransient<IWMIManagers, WMIManagers>()
+                .AddTransient<ProcessorService>()
                 .AddTransient<DiskDriveService>()
                 .AddTransient<MotherBoardService>()
-                .AddTransient<PhysicalMemoryService>()  
-                .AddTransient<VideoCardService>()       
+                .AddTransient<PhysicalMemoryService>()
+                .AddTransient<VideoCardService>()
                 .AddTransient<ProcessInformationService>()
-                .AddTransient<ProcessPerfomanceService>()      
+                .AddTransient<ProcessPerfomanceService>()
                 .AddTransient<ComputerSystemInformationService>()
-                .AddTransient<HardwareSystemInformationController>()    
+                .AddTransient<HardwareSystemInformationController>()
                 .AddTransient<OperatingSystemInformationController>()
                 .AddTransient<OperatingSystemMonitoringController>()
                 .AddAutoMapper();
-        }   
+        }
     }
 }
