@@ -5,46 +5,43 @@ using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Attributes;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 using SystemDiagnostic.Diagnostic.DTO.Entities;
+using SystemDiagnostic.Diagnostic.Server.Controllers;
 
 namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
 {
     public class ServerCommandHandler : BaseServerCommandHandler
     {
-        public ServerCommandHandler()
-            : base(typeof(ServerCommandHandler)) { }
+        private IServiceProvider _serviceProvider;
+        public ServerCommandHandler(IServiceProvider serviceProvider)
+            : base(typeof(ServerCommandHandler))
+        {
+            _serviceProvider = serviceProvider;
+        }
 
 
         [CRCommandHandler("Test")]
         public ServerResponseInformation TestHandleMethod(ClientCommandInformation clientCommand)
         {
-            Console.Write(DateTime.Now.ToString());
-            Console.WriteLine(clientCommand.SerializedData);
-            Console.WriteLine(clientCommand.ClientLogin.Login);
-            return new ServerResponseInformation
-            {
-                Status = 322,
-                SerializedData = "Hellow world"
-            };
-        }
-
-        [CRCommandHandler("RegisterComputerComponent")]
-        public ServerResponseInformation RegisterComputerComponentHandleMethod
-            (ClientCommandInformation clientCommand)
-        {
-            try
-            {
-                throw new NotImplementedException();
-            }
-            catch
-            {
-                throw new NotImplementedException();
-            }
-        }
+            AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
+                .GetService(typeof(AuthorizeController));
+            var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
+            if (resAuthorize != null)
+                return resAuthorize;
+            TestController testController = (TestController)_serviceProvider
+                .GetService(typeof(TestController));
+            return testController.Test(clientCommand);            
+        }        
 
         [CRCommandHandler("GetComputerComponent")]
         public ServerResponseInformation GetComputerComponent
             (ClientCommandInformation clientCommand)
         {
+            AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
+                .GetService(typeof(AuthorizeController));
+            var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
+            if (resAuthorize != null)
+                return resAuthorize;
+
             ComputerHardwareInformationDTO chInformation = JsonConvert
                 .DeserializeObject<ComputerHardwareInformationDTO>(clientCommand.SerializedData);
             Console.WriteLine(DateTime.Now.ToString());
@@ -60,6 +57,12 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
         public ServerResponseInformation GetTopPerfomanceProcesses
             (ClientCommandInformation clientCommand)
         {
+            AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
+                .GetService(typeof(AuthorizeController));
+            var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
+            if (resAuthorize != null)
+                return resAuthorize;
+
             IEnumerable<ProcessPerfomanceDTO>  processesPerfomance 
                 = JsonConvert.DeserializeObject<IEnumerable<ProcessPerfomanceDTO>>
                     (clientCommand.SerializedData);
@@ -72,6 +75,6 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                 Status = 1,
                 SerializedData = "Success"
             };
-        }
+        }        
     }
 }

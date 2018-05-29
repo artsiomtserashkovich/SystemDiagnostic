@@ -22,7 +22,7 @@ namespace SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient
             MethodInfo handleMethod = SearchHandlerMethod(_classHandlers,serverResponse.Information.Status);
             if(handleMethod == null)
                 throw new ClientResponseHandlerException("Undefined status code of response.");
-            object[] methodArguments = new object[]{serverResponse.Information};
+            object[] methodArguments = new object[]{serverResponse.Information,serverResponse.Command};
             handleMethod.Invoke(this,methodArguments);
         }
         

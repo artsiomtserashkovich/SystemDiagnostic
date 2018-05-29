@@ -38,7 +38,7 @@ namespace SystemDiagnostic.Diagnostic.Client.Services
         public IEnumerable<ProcessInformationDTO> GetTopProcessesByMemoryUsage(int count){
             IEnumerable<WMIProcess> wmiProcesses = _wmimanagers
                 .WMIProcessManager.GetWMIProcesses();
-            IEnumerable<WMIProcess> wmiTopProcesses = wmiProcesses.OrderByDescending(p => p.PeakWorkingSetSizeKB).Take(count);
+            IEnumerable<WMIProcess> wmiTopProcesses = wmiProcesses.OrderByDescending(p => p.PeakWorkingSetSizeKB).Skip(2).Take(count);
             return _mapper.Map<IEnumerable<WMIProcess>,IEnumerable<ProcessInformationDTO>>(wmiTopProcesses);
         }
     }

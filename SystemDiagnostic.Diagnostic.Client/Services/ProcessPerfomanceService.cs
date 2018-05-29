@@ -51,7 +51,7 @@ namespace SystemDiagnostic.Diagnostic.Client.Services
             IEnumerable<WMIPerfDataProcess> wmiPerfDataProcesses = _wmimanagers
                 .WMIPerfDataProcessManager.GetWMIPerfDataProcesses();
             IEnumerable<WMIPerfDataProcess> wmiTopMemoryUsagePerfDataProcesses 
-                = wmiPerfDataProcesses.OrderByDescending(p => p.PercentProcessorTime).Take(count);
+                = wmiPerfDataProcesses.OrderByDescending(p => p.PercentProcessorTime).Skip(2).Take(count);
             return wmiTopMemoryUsagePerfDataProcesses == null ? null : _mapper.Map<IEnumerable<WMIPerfDataProcess>,
                 IEnumerable<ProcessPerfomanceDTO>>(wmiTopMemoryUsagePerfDataProcesses);
         }

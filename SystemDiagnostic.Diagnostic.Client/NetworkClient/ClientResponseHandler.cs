@@ -10,7 +10,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
         public ClientResponseHandler()
             : base(typeof(ClientResponseHandler)) { }        
         
-        [CRResponseHandler(322)]
+        [CRResponseHandler(999)]
         public void TestResponseHandler(ServerResponseInformation serverResponse,string command){
             Console.WriteLine(serverResponse.Status);
             Console.WriteLine(serverResponse.SerializedData);
@@ -27,7 +27,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
         public void SuccessResponseHandler(ServerResponseInformation serverResponse, string command)
         {
             Console.WriteLine(DateTime.Now.ToString());
-            Console.WriteLine("Success Command" + command);
+            Console.WriteLine("Success handle of command" + command +".");
         }
     }
 }
