@@ -39,7 +39,7 @@ namespace SystemDiagnostic.Diagnostic.Client
         {
             scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "Test" }, 10, true);
             scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "GetComputerComponent" }, 15, true);
-            scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "GetTopPerfomanceProcesses" }, 15, true);
+            scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "GetTopCPUUsageProcesses" }, 15, true);
         }
 
         private static void ConfigureServices(IServiceCollection service)

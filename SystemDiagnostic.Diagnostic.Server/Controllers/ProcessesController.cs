@@ -37,6 +37,28 @@ namespace SystemDiagnostic.Diagnostic.Server.Controllers
                 };
             }            
         }
+
+        public ServerResponseInformation RecieveProcessInformation(ProcessInformationDTO processInformation)
+        {
+            try
+            {
+                Console.WriteLine(processInformation.CommandLine);
+                Console.WriteLine(processInformation.Name);
+                return new ServerResponseInformation
+                {
+                    Status = 1,
+                    SerializedData = "Success"
+                };
+            }
+            catch (ServerServicesException exception)
+            {
+                return new ServerResponseInformation
+                {
+                    Status = -1,
+                    SerializedData = exception.Message
+                };
+            }
+        }
         
         public ServerResponseInformation RecieveProcesses(IEnumerable<ProcessDTO> processes)
         {

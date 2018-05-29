@@ -105,9 +105,54 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
         }
 
         [CRCommandHandler("GetTopMemoryUsageProcesses")]
+        public ServerResponseInformation GetTopMemoryUsageProcesses
+            (ClientCommandInformation clientCommand)
+        {
+            AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
+                .GetService(typeof(AuthorizeController));
+            var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
+            if (resAuthorize != null)
+                return resAuthorize;
+
+            IEnumerable<ProcessDTO> processes = JsonConvert
+                .DeserializeObject<IEnumerable<ProcessDTO>>(clientCommand.SerializedData);
+            ProcessesController processesController = (ProcessesController)_serviceProvider
+                .GetService(typeof(ProcessesController));
+            return processesController.RecieveProcesses(processes);
+        }
 
         [CRCommandHandler("GetProcessInformationById")]
+        public ServerResponseInformation GetProcessInformationById
+            (ClientCommandInformation clientCommand)
+        {
+            AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
+               .GetService(typeof(AuthorizeController));
+            var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
+            if (resAuthorize != null)
+                return resAuthorize;
+
+            ProcessInformationDTO processInformationDTO = JsonConvert
+               .DeserializeObject<ProcessInformationDTO>(clientCommand.SerializedData);
+            ProcessesController processesController = (ProcessesController)_serviceProvider
+               .GetService(typeof(ProcessesController));
+            return processesController.RecieveProcessInformation(processInformationDTO);
+        }
 
         [CRCommandHandler("GetProcessInformationByName")]
+        public ServerResponseInformation GetProcessInformationByName
+            (ClientCommandInformation clientCommand)
+        {
+            AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
+               .GetService(typeof(AuthorizeController));
+            var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
+            if (resAuthorize != null)
+                return resAuthorize;
+
+            ProcessInformationDTO processInformationDTO = JsonConvert
+                .DeserializeObject<ProcessInformationDTO>(clientCommand.SerializedData);
+            ProcessesController processesController = (ProcessesController)_serviceProvider
+               .GetService(typeof(ProcessesController));
+            return processesController.RecieveProcessInformation(processInformationDTO);
+        }
     }
 }
