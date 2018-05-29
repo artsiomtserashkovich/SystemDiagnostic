@@ -158,7 +158,7 @@ namespace SystemDiagnostic.Diagnostic.TCPProtocol.Server
         {
             Socket recipientSocket;
             if (!clients.TryGetValue(iPEndPoint, out recipientSocket))
-                throw new TCPProtocolException("Dont have socket.");
+                 throw new TCPProtocolException("Dont have socket.");
             try
             {
                 recipientSocket.Disconnect(false);

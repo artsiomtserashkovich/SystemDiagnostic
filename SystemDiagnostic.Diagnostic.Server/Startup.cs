@@ -25,6 +25,7 @@ namespace SystemDiagnostic.Diagnostic.Server
         {
             service.AddTransient<AuthorizeController>()
                 .AddTransient<ComputerController>()
+                .AddTransient<TestController>()
                 .AddTransient<ProcessesController>();        
         } 
 
