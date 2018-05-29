@@ -26,12 +26,42 @@ namespace SystemDiagnostic.Diagnostic.Client.Controllers
 
         public IEnumerable<ProcessDTO> GetTopCPUUsageProcesses()
         {
-
+            IEnumerable<ProcessPerfomanceDTO> processesPerfomance = _processPerfomanceService
+                .GetTopCPUUsageProcessesPerfomances(10);
+            IList<ProcessDTO> processes = new List<ProcessDTO>(10);
+            foreach (ProcessPerfomanceDTO processPerfomance in processesPerfomance)
+            {
+                ProcessInformationDTO processInformation = _processInformationService
+                    .GetProcessInformationById(processPerfomance.ProcessId);
+                ProcessDTO process = new ProcessDTO
+                {
+                    Information = processInformation,
+                    PerfomanceInformation = processPerfomance,
+                    ProcessId = processPerfomance.ProcessId
+                };
+                processes.Add(process);
+            }
+            return processes;
         }
 
-        public IEnumerable<ProcessDTO> GetTopMemoryProcesses()
+        public IEnumerable<ProcessDTO> GetTopMemoryUsageProcesses()
         {
-
+            IEnumerable<ProcessPerfomanceDTO> processesPerfomance = _processPerfomanceService
+                .GetTopMemoryUsageProcessesPerfomances(10);
+            IList<ProcessDTO> processes = new List<ProcessDTO>(10);
+            foreach (ProcessPerfomanceDTO processPerfomance in processesPerfomance)
+            {
+                ProcessInformationDTO processInformation = _processInformationService
+                    .GetProcessInformationById(processPerfomance.ProcessId);
+                ProcessDTO process = new ProcessDTO
+                {
+                    Information = processInformation,
+                    PerfomanceInformation = processPerfomance,
+                    ProcessId = processPerfomance.ProcessId
+                };
+                processes.Add(process);
+            }
+            return processes;
         }
 
         public IEnumerable<ProcessPerfomanceDTO> GetTopMemoryUsageProcessesPerfomance()

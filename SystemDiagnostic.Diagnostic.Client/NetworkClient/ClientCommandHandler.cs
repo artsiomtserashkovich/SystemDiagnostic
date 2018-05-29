@@ -50,7 +50,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
         {
             OperatingSystemMonitoringController operatingSystemMonitoringController
                 = (OperatingSystemMonitoringController)_serviceProvider.GetService(typeof(OperatingSystemMonitoringController));
-            IEnumerable<ProcessPerfomanceDTO> processPerfomanceDTO 
+            IEnumerable<ProcessPerfomanceDTO> processPerfomanceDTO
                 = operatingSystemMonitoringController.GetTopMemoryUsageProcessesPerfomance();
             return JsonConvert.SerializeObject(processPerfomanceDTO);
         }
@@ -69,7 +69,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
         {
             OperatingSystemMonitoringController operatingSystemMonitoringController
                 = (OperatingSystemMonitoringController)_serviceProvider.GetService(typeof(OperatingSystemMonitoringController));
-            IEnumerable<ProcessDTO> processes = operatingSystemMonitoringController.GetTopMemoryProcesses();
+            IEnumerable<ProcessDTO> processes = operatingSystemMonitoringController.GetTopMemoryUsageProcesses();
             return JsonConvert.SerializeObject(processes);
         }
 

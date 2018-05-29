@@ -5,11 +5,12 @@ using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 
 namespace SystemDiagnostic.Diagnostic.Server.Controllers
 {
-    class TestController
+    public class TestController
     {
         public TestController() { }
 
-        public ServerResponseInformation Test(ClientCommandInformation clientCommand)
+        public ServerResponseInformation RecieveTest
+            (ClientCommandInformation clientCommand)
         {
             Console.Write(DateTime.Now.ToString());
             Console.WriteLine(clientCommand.SerializedData);

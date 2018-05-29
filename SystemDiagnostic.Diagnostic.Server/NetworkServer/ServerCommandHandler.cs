@@ -29,7 +29,7 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                 return resAuthorize;
             TestController testController = (TestController)_serviceProvider
                 .GetService(typeof(TestController));
-            return testController.Test(clientCommand);            
+            return testController.RecieveTest(clientCommand);            
         }        
 
         [CRCommandHandler("GetComputerComponent")]
@@ -40,21 +40,18 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                 .GetService(typeof(AuthorizeController));
             var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
             if (resAuthorize != null)
+
                 return resAuthorize;
 
             ComputerHardwareInformationDTO chInformation = JsonConvert
                 .DeserializeObject<ComputerHardwareInformationDTO>(clientCommand.SerializedData);
-            Console.WriteLine(DateTime.Now.ToString());
-            Console.WriteLine(chInformation.ToString());
-            return new ServerResponseInformation
-            {
-                Status = 1,
-                SerializedData = "Success"
-            };
+            ComputerController computerController = (ComputerController)_serviceProvider
+                .GetService(typeof(ComputerController));
+            return computerController.RecieveComputerHardwareInformation(chInformation);
         }
 
-        [CRCommandHandler("GetTopPerfomanceProcesses")]
-        public ServerResponseInformation GetTopPerfomanceProcesses
+        [CRCommandHandler("GetTopCPUUsageProcessesPerfomance")]
+        public ServerResponseInformation GetTopCPUUsageProcessesPerfomance
             (ClientCommandInformation clientCommand)
         {
             AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
@@ -66,15 +63,51 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
             IEnumerable<ProcessPerfomanceDTO>  processesPerfomance 
                 = JsonConvert.DeserializeObject<IEnumerable<ProcessPerfomanceDTO>>
                     (clientCommand.SerializedData);
-            Console.WriteLine(DateTime.Now.ToString());
-            foreach (ProcessPerfomanceDTO process in processesPerfomance)
-                Console.WriteLine(process.ProcessId + " " + process.Name + " " 
-                    + process.PercentCPUUsage + " " + process.RamMemoryUsageMB);
-            return new ServerResponseInformation
-            {
-                Status = 1,
-                SerializedData = "Success"
-            };
-        }        
+            ProcessesController processesController = (ProcessesController)_serviceProvider
+                .GetService(typeof(ProcessesController));
+            return processesController.RecieveProcessesPerfomance(processesPerfomance);           
+        }
+
+        [CRCommandHandler("GetTopMemoryUsageProcessesPerfomance")]
+        public ServerResponseInformation GetTopMemoryUsageProcessesPerfomance
+            (ClientCommandInformation clientCommand)
+        {
+            AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
+                .GetService(typeof(AuthorizeController));
+            var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
+            if (resAuthorize != null)
+                return resAuthorize;
+
+            IEnumerable<ProcessPerfomanceDTO> processesPerfomance
+                = JsonConvert.DeserializeObject<IEnumerable<ProcessPerfomanceDTO>>
+                    (clientCommand.SerializedData);
+            ProcessesController processesController = (ProcessesController)_serviceProvider
+                .GetService(typeof(ProcessesController));
+            return processesController.RecieveProcessesPerfomance(processesPerfomance);
+
+        }
+
+        [CRCommandHandler("GetTopCPUUsageProcesses")]
+        public ServerResponseInformation GetTopCPUUsageProcesses
+            (ClientCommandInformation clientCommand)
+        {
+            AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
+                .GetService(typeof(AuthorizeController));
+            var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
+            if (resAuthorize != null)
+                return resAuthorize;
+
+            IEnumerable<ProcessDTO> processes = JsonConvert
+                .DeserializeObject<IEnumerable<ProcessDTO>>(clientCommand.SerializedData);
+            ProcessesController processesController = (ProcessesController)_serviceProvider
+                .GetService(typeof(ProcessesController));
+            return processesController.RecieveProcesses(processes);
+        }
+
+        [CRCommandHandler("GetTopMemoryUsageProcesses")]
+
+        [CRCommandHandler("GetProcessInformationById")]
+
+        [CRCommandHandler("GetProcessInformationByName")]
     }
 }
