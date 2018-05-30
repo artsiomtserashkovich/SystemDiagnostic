@@ -26,5 +26,6 @@ namespace SystemDiagnostic.Entitites
         public ICollection<VideoCard> VideoCards { get; set; }
         public ComputerSystem ComputerSystem { get; set; }
         public ICollection<Process> Processes { get; set; }
+        public bool IsConnected { get; set; }
     }
 }
