@@ -54,7 +54,7 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
                 = operatingSystemMonitoringController.GetTopMemoryUsageProcessesPerfomance();
             return JsonConvert.SerializeObject(processPerfomanceDTO);
         }
-
+        
         [CRCommandHandler("GetTopCPUUsageProcesses")]
         public string GetTopCPUUsageProcesses(ClientCommandRequest clientCommandRequest)
         {

@@ -29,5 +29,12 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
             Console.WriteLine(DateTime.Now.ToString());
             Console.WriteLine("Success handle of command" + command +".");
         }
+
+        [CRResponseHandler(-1)]
+        public void ErrorResponseHandler(ServerResponseInformation serverResponse,string command)
+        {
+            Console.WriteLine(DateTime.Now.ToString());
+            Console.WriteLine("Error of " + command + " command");
+        }
     }
 }
