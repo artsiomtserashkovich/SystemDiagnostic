@@ -5,8 +5,8 @@ using System.Text;
 
 namespace SystemDiagnostic.DAL.Interfaces
 {
-    public interface IProcess : IRepository<Process>
-    {
+    public interface IProcessRepository : IRepository<Process>
+    { 
         IEnumerable<Process> GetProcessesByComputerId(string computerId);
         IEnumerable<Process> GetProcessesByComputerLogin(string computerLogin);
     }

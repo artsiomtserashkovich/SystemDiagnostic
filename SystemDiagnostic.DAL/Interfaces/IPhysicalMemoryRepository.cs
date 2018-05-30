@@ -5,8 +5,8 @@ using SystemDiagnostic.Entitites.ComputerComponents;
 
 namespace SystemDiagnostic.DAL.Interfaces
 {
-    public interface IProcessorRepository:IRepository<Processor>
+    public interface IPhysicalMemoryRepository :IRepository<PhysicalMemory>
     {
-        Processor GetProcessorByComputerId { get; set; }
+        IEnumerable<PhysicalMemory> GetPhysicalMemoriesByProcessId(string processId);
     }
 }
