@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
+using SystemDiagnostic.Entitites.MonitoringInformation;
 
 namespace SystemDiagnostic.DAL.Interfaces
 {

@@ -7,6 +7,6 @@ namespace SystemDiagnostic.DAL.Interfaces
 {
     public interface IMotherBoardRepository :IRepository<MotherBoard>
     {
-        MotherBoard GetMotherBoardByComputerId { get; set; }
+        MotherBoard GetMotherBoardByComputerId(string computerId);
     }
 }
