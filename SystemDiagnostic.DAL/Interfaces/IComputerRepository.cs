@@ -9,6 +9,7 @@ namespace SystemDiagnostic.DAL.Interfaces
     {
         Computer GetByLogin(string login);
         IEnumerable<Computer> GetOnlineComputers();
-        void ChangeConnectionStatus(string id, bool status);
+        bool Auhtorize(string login, string password);
+        bool CheckUniqueLogin(string Login);
     }
 }

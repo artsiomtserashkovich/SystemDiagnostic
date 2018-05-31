@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SystemDiagnostic.Entitites.ComputerComponents;
 
 namespace SystemDiagnostic.DAL.Interfaces
 {
-    interface IVideoCardRepository
+    public interface IVideoCardRepository : IRepository<VideoCard>
     {
+        IEnumerable<VideoCard> GetVideoCardsByComputerId(string computerId);
     }
 }

@@ -7,6 +7,6 @@ namespace SystemDiagnostic.DAL.Interfaces
 {
     public interface IProcessorRepository:IRepository<Processor>
     {
-        Processor GetProcessorByComputerId { get; set; }
+        Processor GetProcessorByComputerId(string computerId);
     }
 }

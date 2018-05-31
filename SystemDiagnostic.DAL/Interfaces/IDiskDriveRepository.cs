@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SystemDiagnostic.Entitites.ComputerComponents;
 
 namespace SystemDiagnostic.DAL.Interfaces
 {
-    interface IDiskDriveRepository
+    public interface IDiskDriveRepository : IRepository<DiskDrive>
     {
+        IEnumerable<DiskDrive> GetDiskDrivesByComputerId { get; set; }
     }
 }

@@ -9,7 +9,7 @@ using SystemDiagnostic.Entitites.OperatingInformation;
 
 namespace SystemDiagnostic.DAL.Data
 {
-    public abstract class ApplicationDataBaseContext
+    public class ApplicationDataBaseContext : DbContext
     {
         public DbSet<Computer> Computers { get; set; }
         public DbSet<DiskDrive> DiskDrives { get; set; }
