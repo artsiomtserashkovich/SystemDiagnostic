@@ -1,0 +1,242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.Attributes.CRCommandHandlerAttribute" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\CRCommandHandlerAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.Attributes.CRResponseHandlerAttribute" Collapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Attributes\CRResponseHandlerAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities.ClientCommandRequest" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>CRClient\Entities\ClientCommandRequest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities.RunInputModel" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>CRClient\Entities\RunInputModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities.SendCommandInformation" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAAAAAAAAAAAABAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>CRClient\Entities\SendCommandInfotmation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Entities.UIOutputModel" Collapsed="true">
+    <Position X="8.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAEAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>CRClient\Entities\UIOutputModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Exceptions.ClientCommandHandlerException" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRClient\Exceptions\ClientCommandHandlerException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Exceptions.ClientResponseHandlerException" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRClient\Exceptions\ClientResponseHandlerException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Exceptions.CRClientException" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRClient\Exceptions\CRClientException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Exceptions.SystemDiagnosticClientException" Collapsed="true">
+    <Position X="6.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRClient\Exceptions\SystemDiagnosticClientException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.BaseClientCommandHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAgAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRClient\BaseClientCommandHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.BaseClientResponseHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAADAACAEAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>CRClient\BaseClientResponseHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Client" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AICBAAAACagAAAAAEACAAAAAAAAAgAAAAAAAAQAQACI=</HashCode>
+      <FileName>CRClient\Client.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.CRClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACBEIQAAAAABAAAAEAAAEUAACAQAgAAAAAI=</HashCode>
+      <FileName>CRClient\CRClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.ScheduleCommandManager" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCACAAAEAAAAAAAAAAAAAAAAIAAAgAAAgAI=</HashCode>
+      <FileName>CRClient\SheduleCommandManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer.Entities.RunPropertyModel" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAACAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>CRServer\Entities\RunPropertyModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer.BaseServerCommandHandler" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAgAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>CRServer\BaseServerCommandHandler.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer.Server" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAgIAAAAI=</HashCode>
+      <FileName>CRServer\Server.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer.ServerCommandHandleException" Collapsed="true">
+    <Position X="10" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRServer\ServerCommandHandleException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities.ClientCommandDTO" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ClientCommandDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities.ClientCommandInformation" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ClientCommandInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities.ClientLoginModel" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAQAAAAAAA=</HashCode>
+      <FileName>Entities\ClientLoginModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities.ServerResponseDTO" Collapsed="true">
+    <Position X="3" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ServerResponseDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities.ServerResponseInformation" Collapsed="true">
+    <Position X="4.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ServerResponseInformation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces.IClient" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRClient\Interfaces\IClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces.IClientCommandHandler" Collapsed="true">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRClient\Interfaces\IClientCommnadHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces.IClientMediator" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACBAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAQAQACA=</HashCode>
+      <FileName>CRClient\Interfaces\IClientMediator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces.IClientResponseHandler" Collapsed="true">
+    <Position X="4.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CRClient\Interfaces\IClientResponseHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces.ICRClient" Collapsed="true">
+    <Position X="6.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>CRClient\Interfaces\ICRClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces.IScheduleCommandManager" Collapsed="true">
+    <Position X="8.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAIAAAgAAAgAI=</HashCode>
+      <FileName>CRClient\Interfaces\IScheduleCommandManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRClient.Interfaces.IUserInterface" Collapsed="true">
+    <Position X="4.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIAIAAAQCAAAAAAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>CRClient\Interfaces\IUserInterface.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.CRServer.Interfaces.IServer" Collapsed="true">
+    <Position X="10" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>CRServer\Interfaces\ICRServer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.CommandResponseProtocol.Interfaces.IServerCommandHandler" Collapsed="true">
+    <Position X="3" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>CRServer\Interfaces\IServerCommandHandler.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

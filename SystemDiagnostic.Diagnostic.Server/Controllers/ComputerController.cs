@@ -4,22 +4,42 @@ using System.Text;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 using SystemDiagnostic.Diagnostic.DTO.Entities;
 using SystemDiagnostic.Diagnostic.Server.Services.Exceptions;
+using SystemDiagnostic.Diagnostic.Server.Services.Interfaces;
 
 namespace SystemDiagnostic.Diagnostic.Server.Controllers
 {
-    public class ComputerController
+    class ComputerController
     {
-        public ComputerController() { }
+        private readonly IComputerComponentService _computerComponentService;
+        private readonly IComputerSystemService _computerSystemService;
+        private readonly IProcessService _processService;
+
+        public ComputerController(
+            IComputerComponentService computerComponentService,
+            IComputerSystemService computerSystemService,
+            IProcessService processService
+            )
+        {
+            _computerComponentService = computerComponentService;
+            _processService = processService;
+            _computerSystemService = computerSystemService;
+        }
 
         public ServerResponseInformation RecieveComputerHardwareInformation
-            (ComputerHardwareInformationDTO computeHardwareInformation)
+            (ComputerHardwareInformationDTO computeHardwareInformation, ClientLoginModel clientLogin)
         {
             try
             {
-                Console.WriteLine(computeHardwareInformation.Processor.Architecture);
-                Console.WriteLine(computeHardwareInformation.Processor.Name);
-                Console.WriteLine(computeHardwareInformation.MotherBoard.Manufacturer);
-                Console.WriteLine(computeHardwareInformation.MotherBoard.Product);
+                _computerComponentService.UpdateProcessor
+                    (clientLogin.Login, computeHardwareInformation.Processor);
+                _computerComponentService.UpdateMotherBoard
+                    (clientLogin.Login, computeHardwareInformation.MotherBoard);
+                _computerComponentService.UpdateVideoCards
+                    (clientLogin.Login, computeHardwareInformation.VideoCards);
+                _computerComponentService.UpdateDiskDrives
+                    (clientLogin.Login, computeHardwareInformation.DiskDrives);
+                _computerComponentService.UpdatePhysicalMemories
+                    (clientLogin.Login, computeHardwareInformation.PhysicalMemories);
                 return new ServerResponseInformation
                 {
                     Status = 1,
@@ -33,22 +53,16 @@ namespace SystemDiagnostic.Diagnostic.Server.Controllers
                     Status = -1,
                     SerializedData = exception.Message
                 };
-            }
-            finally
-            {
-
             }
         }
 
         public ServerResponseInformation RecieveComputerOperatingInformation
-            (ComputerOperatingInformationDTO computerOperatingInformation)
+            (ComputerOperatingInformationDTO computerOperatingInformation, ClientLoginModel clientLogin)
         {
             try
             {
-                Console.WriteLine(computerOperatingInformation.ComputerInformation.ComputerName);
-                Console.WriteLine(computerOperatingInformation.ComputerInformation.CurrentUsername);
-                Console.WriteLine(computerOperatingInformation.ComputerInformation.DNSHostName);
-                Console.WriteLine(computerOperatingInformation.ComputerInformation.OSName);
+                _computerSystemService.UpdateComputerSystem(clientLogin.Login, computerOperatingInformation.ComputerInformation);
+                _processService.UpdateProcesses(clientLogin.Login, computerOperatingInformation.CurrentProcesses);
                 return new ServerResponseInformation
                 {
                     Status = 1,
@@ -62,10 +76,6 @@ namespace SystemDiagnostic.Diagnostic.Server.Controllers
                     Status = -1,
                     SerializedData = exception.Message
                 };
-            }
-            finally
-            {
-
             }
         }
 

@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SystemDiagnostic.Diagnostic.TCPProtocol.Client.TCPClient" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAQBCAAQAAAAEAAQIUAECQAAAAAQAAgCkAAAAA=</HashCode>
+      <FileName>Client\TCPClient.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.TCPProtocol.Extensions.ArraySegmentExtensions" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\ArraySegmentExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.TCPProtocol.Extensions.Constans" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQAAAABBACAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>Extensions\Globals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.TCPProtocol.Extensions.TransferException" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\Globals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.TCPProtocol.Extensions.NotFoundException" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\Globals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.TCPProtocol.Extensions.TCPProtocolException" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\Globals.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.TCPProtocol.Extensions.SocketExtensions" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\SocketExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.TCPProtocol.Extensions.TCPSegmentSizeFormater" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAFAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\TCPSegmentSizeFormater.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.TCPProtocol.Server.TCPServer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCACEAAAoGAAABQoAAQAAQAAJAAgKgAAAIQ=</HashCode>
+      <FileName>Server\TCPServer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces.ITCPClient" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAABAAAQAAAAAAAQIUAAAQAAAAAAAAgCEAAAAA=</HashCode>
+      <FileName>Interfaces\ITCPClient.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.TCPProtocol.Interfaces.ITCPServer" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABCACAAAAgCAAAAQAAAQAAAAAJAAgKAAAAAA=</HashCode>
+      <FileName>Interfaces\ITCPServer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Delegate Name="SystemDiagnostic.Diagnostic.TCPProtocol.Extensions.SocketAction" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\Globals.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="SystemDiagnostic.Diagnostic.TCPProtocol.Extensions.RecieveDataSocket" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\Globals.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

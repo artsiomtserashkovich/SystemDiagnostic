@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <ItemGroup>
+    <ProjectReference Include="..\SystemDiagnostic.DAL\SystemDiagnostic.DAL.csproj" />
     <ProjectReference Include="..\SystemDiagnostic.Diagnostic.DTO\SystemDiagnostic.Diagnostic.DTO.csproj" />
     <ProjectReference Include="..\SystemDiagnostic.Diagnostic.TCPProtocol\SystemDiagnostic.Diagnostic.TCPProtocol.csproj" />
     <ProjectReference Include="..\SystemDiagnostic.Diagnostic.CommandResponseProtocol\SystemDiagnostic.Diagnostic.CommandResponseProtocol.csproj" />
@@ -7,9 +8,6 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.0-preview2-final" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\Interfaces\" />
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>

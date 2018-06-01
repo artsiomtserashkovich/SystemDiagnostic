@@ -11,6 +11,9 @@ namespace SystemDiagnostic.DAL.Data
 {
     public class ApplicationDataBaseContext : DbContext
     {
+        public ApplicationDataBaseContext(DbContextOptions<ApplicationDataBaseContext> options) 
+            : base(options) { }
+
         public DbSet<Computer> Computers { get; set; }
         public DbSet<DiskDrive> DiskDrives { get; set; }
         public DbSet<MotherBoard> MotherBoards { get; set; }

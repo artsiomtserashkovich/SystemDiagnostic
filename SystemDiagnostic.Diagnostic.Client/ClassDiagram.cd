@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Controllers.HardwareSystemInformationController" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAADAAAAAAAAAEAIAAhAAAEgEAAAAAAAAAAAAAEQ=</HashCode>
+      <FileName>Controllers\HardwareSystemInformationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Controllers.OperatingSystemInformationController" Collapsed="true">
+    <Position X="18.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAgAAAAAAAIAAQAAAAAAAAAAAAEAQ=</HashCode>
+      <FileName>Controllers\OperatingSystemInformationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Controllers.OperatingSystemMonitoringController" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAgAAAAAAAAAAAAAAAAAAAIQAAAAgiAAAAAAAAEAA=</HashCode>
+      <FileName>Controllers\OperatingSystemMonitoringController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.MapperProfile.WMIMapperProfile" Collapsed="true">
+    <Position X="20.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MapperProfile\WMIMapperProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.NetworkClient.ClientCommandHandler" Collapsed="true">
+    <Position X="18.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAgAAAAAAAIAAAAAAAAAAAAAAQAAkAAAAAAAABAAQ=</HashCode>
+      <FileName>NetworkClient\ClientCommandHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.NetworkClient.ClientResponseHandler" Collapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAQAAACAEAAAAAA=</HashCode>
+      <FileName>NetworkClient\ClientResponseHandler.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.NetworkClient.UserInterface" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEIAIAAAQCAAAAAAAAAAAAAAAAACAAAAABgAAAAAA=</HashCode>
+      <FileName>NetworkClient\UserInterface.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Services.ComputerSystemInformationService" Collapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEABAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\ComputerSystenInformationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Services.DiskDriveService" Collapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAEEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\DiskDriveService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Services.MotherBoardService" Collapsed="true">
+    <Position X="27.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABABAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\MotherBoardService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Services.PhysicalMemoryService" Collapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAABAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\PhysicalMemoryService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Services.ProcessInformationService" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAABAAAAAAAQEEAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Services\ProcessInformationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Services.ProcessorService" Collapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAABAAAAAAAAAAAAQ=</HashCode>
+      <FileName>Services\ProcessorService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Services.ProcessPerfomanceService" Collapsed="true">
+    <Position X="27.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAEAABAAAAAQAAEAAgAAAAAAAAEAA=</HashCode>
+      <FileName>Services\ProcessPerfomanceService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Services.VideoCardService" Collapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAgAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\VideoCardService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties.WMIBaseBoardProperties" Collapsed="true">
+    <Position X="27.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAEAAAgAAAAQAAAQAQAAAEAAACACAgAEAAAAAI=</HashCode>
+      <FileName>WMI\Attributes\Properties\WMIBaseBoardProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties.WMIComputerSystemProperties" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQACAAAAAAA=</HashCode>
+      <FileName>WMI\Attributes\Properties\WMIComputerSystemProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties.WMIDiskDriveProperties" Collapsed="true">
+    <Position X="25.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAggAgAAAAAAAQAAAEAAAAAAAkAAAAAAAA=</HashCode>
+      <FileName>WMI\Attributes\Properties\WMIDiskDriveProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties.WMIPerfDataProcessProperties" Collapsed="true">
+    <Position X="24" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAABAAABAABAQAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>WMI\Attributes\Properties\WMIPerfDataProcessProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties.WMIPhysicalMemoryProperties" Collapsed="true">
+    <Position X="27.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoAAAAAAAAgAAAAQAAAAAQDAAEAAAAACCgAAAAAAAA=</HashCode>
+      <FileName>WMI\Attributes\Properties\WMIPhysicalMemoryProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties.WMIProcessorProperties" Collapsed="true">
+    <Position X="22.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAAAIggAAEAAAAgAQAAIQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Attributes\Properties\WMIProcessorProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties.WMIProcessProperties" Collapsed="true">
+    <Position X="24" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAgAAAAEAAAgAhAAAAAAAAQAAAAAEQgAGAAEAAAAAAA=</HashCode>
+      <FileName>WMI\Attributes\Properties\WMIProcessProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Attributes.Properties.WMIVideoControllerProperties" Collapsed="true">
+    <Position X="27.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAgAAAgAAAAAAAGAgQAAAAAEAAACgAAEAAAAAA=</HashCode>
+      <FileName>WMI\Attributes\Properties\WMIVideoControllerProperties.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Attributes.WMIAttribute" Collapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Attributes\WMIAttribute.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Entities.WMIBaseBoard" Collapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Entities\WMIBaseBoard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Entities.WMIComputerSystem" Collapsed="true">
+    <Position X="18.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQACAAAAAAA=</HashCode>
+      <FileName>WMI\Entities\WMIComputerSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Entities.WMIDiskDrive" Collapsed="true">
+    <Position X="24" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAgAgAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>WMI\Entities\WMIDiskDrive.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Entities.WMIPerfDataProcess" Collapsed="true">
+    <Position X="22.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAABAAAAAAAAQAAAAAAAAQAAAAAAAAAAg=</HashCode>
+      <FileName>WMI\Entities\WMIPerfDataProcess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Entities.WMIPhysicalMemory" Collapsed="true">
+    <Position X="25.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAoCAAAAAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Entities\WMIPhysicalMemory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Entities.WMIProcess" Collapsed="true">
+    <Position X="18.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAgCAAAAAAAgAAIAAAAAAAQAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Entities\WMIProcess.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Entities.WMIProcessor" Collapsed="true">
+    <Position X="20.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIQCAAAAAAIgAAAAAAAAgAQBAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Entities\WMIProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Entities.WMIVideoController" Collapsed="true">
+    <Position X="25.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAgAAAAAAAAAAAGAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Entities\WMIVideoController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIBaseBoardManager" Collapsed="true">
+    <Position X="2.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIBaseBoardManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIBaseManager" Collapsed="true">
+    <Position X="8.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIBaseManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIComputerSystemManager" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIComputerSystemManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIDiskDriveManager" Collapsed="true">
+    <Position X="14" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIDiskDriveManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIManagers" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="27.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCIABAAAACAAIAAIAAAAIAAAAAAAAAgAAAAAQAAAAEA=</HashCode>
+      <FileName>WMI\Managers\WMIManagers.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIMapper&lt;TEntity&gt;" Collapsed="true">
+    <Position X="18.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIMapper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIPerfDataProcessManager" Collapsed="true">
+    <Position X="16.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIPerfDataProcessManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIPhysicalMemoryManager" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIPhysicalMemoryManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIProcessManager" Collapsed="true">
+    <Position X="5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEBAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIProcessManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIProcessorManager" Collapsed="true">
+    <Position X="7.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIProcessorManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Managers.WMIVideoControllerManager" Collapsed="true">
+    <Position X="11.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Managers\WMIVideoControllerManager.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Queries.WMIBaseBoardQuery" Collapsed="true">
+    <Position X="9.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Queries\WMIBaseBoardQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Queries.WMIBaseQuery" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAgAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Queries\WMIBaseQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Queries.WMIComputerSystemQuery" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Queries\WMIComputerSystemQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Queries.WMIDiskDriveQuery" Collapsed="true">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Queries\WMIDiskDriveQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Queries.WMIPerfDataProcessQuery" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Queries\WMIPerfDataProcessQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Queries.WMIPhysicalMemoryQuery" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Queries\WMIPhysicalMemoryQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Queries.WMIProcessorQuery" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Queries\WMIProcessorQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Queries.WMIProcessQuery" Collapsed="true">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Queries\WMIProcessQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.Queries.WMIVideoControllerQuery" Collapsed="true">
+    <Position X="11.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Queries\WMIVideoControllerQuery.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.WMI.WMIConverter" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAABAAABAEAAAAAA=</HashCode>
+      <FileName>WMI\WMIConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SystemDiagnostic.Diagnostic.Client.Startup" Collapsed="true">
+    <Position X="18.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAADAAAAAA=</HashCode>
+      <FileName>Startup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SystemDiagnostic.Diagnostic.Client.WMI.Interfaces.IWMIBaseBoardManager" Collapsed="true">
+    <Position X="18.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Interfaces\IWMIBaseBoardManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.Client.WMI.Interfaces.IWMIComputerSystemManager" Collapsed="true">
+    <Position X="20.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Interfaces\IWMIComputerSystemManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.Client.WMI.Interfaces.IWMIDiskDriveManager" Collapsed="true">
+    <Position X="22.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Interfaces\IWMIDiskDriveManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.Client.WMI.Interfaces.IWMIManagers" Collapsed="true">
+    <Position X="24" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gCAABAAAAAAAAAAIAAAAIAAAAAAAAAgAAAAAQAAAAEA=</HashCode>
+      <FileName>WMI\Interfaces\IWMIManagers.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.Client.WMI.Interfaces.IWMIPerfDataProcessManager" Collapsed="true">
+    <Position X="25.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAABAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>WMI\Interfaces\IWMIPerfDataProcessManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.Client.WMI.Interfaces.IWMIPhysicalMemoryManager" Collapsed="true">
+    <Position X="27.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Interfaces\IWMIPhysicalMemoryManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.Client.WMI.Interfaces.IWMIProcessManager" Collapsed="true">
+    <Position X="18.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAEBAAAAAAA=</HashCode>
+      <FileName>WMI\Interfaces\IWMIProcessManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.Client.WMI.Interfaces.IWMIProcessorManager" Collapsed="true">
+    <Position X="20.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Interfaces\IWMIProcessorManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SystemDiagnostic.Diagnostic.Client.WMI.Interfaces.IWMIVideoControllerManager" Collapsed="true">
+    <Position X="22.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>WMI\Interfaces\IWMIVideoControllerManager.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SystemDiagnostic.Diagnostic.Client.WMI.Architecture" Collapsed="true">
+    <Position X="18.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAACBAAAAAAAAAAAAAAAAAAAAhAAABAAEAAAIAA=</HashCode>
+      <FileName>WMI\WMIConverter.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

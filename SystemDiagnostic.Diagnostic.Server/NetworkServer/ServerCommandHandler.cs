@@ -47,7 +47,7 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                 .DeserializeObject<ComputerHardwareInformationDTO>(clientCommand.SerializedData);
             ComputerController computerController = (ComputerController)_serviceProvider
                 .GetService(typeof(ComputerController));
-            return computerController.RecieveComputerHardwareInformation(chInformation);
+            return computerController.RecieveComputerHardwareInformation(chInformation,clientCommand.ClientLogin);
         }
 
         [CRCommandHandler("GetTopCPUUsageProcessesPerfomance")]
@@ -65,7 +65,7 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                     (clientCommand.SerializedData);
             ProcessesController processesController = (ProcessesController)_serviceProvider
                 .GetService(typeof(ProcessesController));
-            return processesController.RecieveProcessesPerfomance(processesPerfomance);           
+            return processesController.RecieveProcessesPerfomance(processesPerfomance,clientCommand.ClientLogin);           
         }
 
         [CRCommandHandler("GetTopMemoryUsageProcessesPerfomance")]
@@ -83,7 +83,7 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                     (clientCommand.SerializedData);
             ProcessesController processesController = (ProcessesController)_serviceProvider
                 .GetService(typeof(ProcessesController));
-            return processesController.RecieveProcessesPerfomance(processesPerfomance);
+            return processesController.RecieveProcessesPerfomance(processesPerfomance,clientCommand.ClientLogin);
 
         }
 
@@ -101,7 +101,7 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                 .DeserializeObject<IEnumerable<ProcessDTO>>(clientCommand.SerializedData);
             ProcessesController processesController = (ProcessesController)_serviceProvider
                 .GetService(typeof(ProcessesController));
-            return processesController.RecieveProcesses(processes);
+            return processesController.RecieveProcesses(processes,clientCommand.ClientLogin);
         }
 
         [CRCommandHandler("GetTopMemoryUsageProcesses")]
@@ -118,7 +118,7 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                 .DeserializeObject<IEnumerable<ProcessDTO>>(clientCommand.SerializedData);
             ProcessesController processesController = (ProcessesController)_serviceProvider
                 .GetService(typeof(ProcessesController));
-            return processesController.RecieveProcesses(processes);
+            return processesController.RecieveProcesses(processes,clientCommand.ClientLogin);
         }
 
         [CRCommandHandler("GetProcessInformationById")]
@@ -135,7 +135,7 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                .DeserializeObject<ProcessInformationDTO>(clientCommand.SerializedData);
             ProcessesController processesController = (ProcessesController)_serviceProvider
                .GetService(typeof(ProcessesController));
-            return processesController.RecieveProcessInformation(processInformationDTO);
+            return processesController.RecieveProcessInformation(processInformationDTO,clientCommand.ClientLogin);
         }
 
         [CRCommandHandler("GetProcessInformationByName")]
@@ -152,7 +152,7 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
                 .DeserializeObject<ProcessInformationDTO>(clientCommand.SerializedData);
             ProcessesController processesController = (ProcessesController)_serviceProvider
                .GetService(typeof(ProcessesController));
-            return processesController.RecieveProcessInformation(processInformationDTO);
+            return processesController.RecieveProcessInformation(processInformationDTO,clientCommand.ClientLogin);
         }
     }
 }

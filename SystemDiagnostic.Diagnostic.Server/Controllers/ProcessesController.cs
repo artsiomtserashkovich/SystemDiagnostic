@@ -3,47 +3,27 @@ using System.Collections.Generic;
 using System.Text;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
 using SystemDiagnostic.Diagnostic.DTO.Entities;
+using SystemDiagnostic.Diagnostic.Server.Services.Interfaces;
 using SystemDiagnostic.Diagnostic.Server.Services.Exceptions;
 
 namespace SystemDiagnostic.Diagnostic.Server.Controllers
 {
-    public class ProcessesController
+    class ProcessesController
     {
-        public ProcessesController() { }
 
-        public ServerResponseInformation RecieveProcessesPerfomance(IEnumerable<ProcessPerfomanceDTO> processesPerfomance)
+        private readonly IProcessService _processService;
+
+        public ProcessesController(IProcessService processService)
         {
-            try
-            {
-                foreach (ProcessPerfomanceDTO process in processesPerfomance)
-                {
-                    Console.WriteLine(process.ProcessId);
-                    Console.WriteLine(process.Name);
-                    Console.WriteLine(process.PercentCPUUsage);
-                    Console.WriteLine(process.RamMemoryUsageMB);
-                }
-                return new ServerResponseInformation
-                {
-                    Status = 1,
-                    SerializedData = "Success"
-                };
-            }
-            catch(ServerServicesException exception)
-            {
-                return new ServerResponseInformation
-                {
-                    Status = -1,
-                    SerializedData = exception.Message
-                };
-            }            
+            _processService = processService;
         }
 
-        public ServerResponseInformation RecieveProcessInformation(ProcessInformationDTO processInformation)
+        public ServerResponseInformation RecieveProcessesPerfomance
+            (IEnumerable<ProcessPerfomanceDTO> processesPerfomance, ClientLoginModel clientLogin)
         {
             try
             {
-                Console.WriteLine(processInformation.CommandLine);
-                Console.WriteLine(processInformation.Name);
+                _processService.AddProcessesPerfomance(clientLogin.Login, processesPerfomance);
                 return new ServerResponseInformation
                 {
                     Status = 1,
@@ -59,22 +39,35 @@ namespace SystemDiagnostic.Diagnostic.Server.Controllers
                 };
             }
         }
-        
-        public ServerResponseInformation RecieveProcesses(IEnumerable<ProcessDTO> processes)
+
+        public ServerResponseInformation RecieveProcessInformation
+            (ProcessInformationDTO processInformation, ClientLoginModel clientLogin)
         {
             try
             {
-                foreach (ProcessDTO process in processes)
+                _processService.UpdateProcessInformation(clientLogin.Login, processInformation);
+                return new ServerResponseInformation
                 {
-                    Console.WriteLine(process.ProcessId);
-                    Console.WriteLine(process.Information.Name);
-                    Console.WriteLine(process.Information.Path);
-                    Console.WriteLine(process.Information.CommandLine);
-                    Console.WriteLine(process.Information.CreationDate);
-                    Console.WriteLine(process.Information.Description);
-                    Console.WriteLine(process.PerfomanceInformation.PercentCPUUsage);
-                    Console.WriteLine(process.PerfomanceInformation.RamMemoryUsageMB);
-                }
+                    Status = 1,
+                    SerializedData = "Success"
+                };
+            }
+            catch (ServerServicesException exception)
+            {
+                return new ServerResponseInformation
+                {
+                    Status = -1,
+                    SerializedData = exception.Message
+                };
+            }
+        }
+
+        public ServerResponseInformation RecieveProcesses
+            (IEnumerable<ProcessDTO> processes, ClientLoginModel clientLogin)
+        {
+            try
+            {
+                _processService.UpdateProcesses(clientLogin.Login, processes);
                 return new ServerResponseInformation
                 {
                     Status = 1,

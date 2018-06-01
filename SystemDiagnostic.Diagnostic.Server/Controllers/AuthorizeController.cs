@@ -2,22 +2,28 @@
 using System.Collections.Generic;
 using System.Text;
 using SystemDiagnostic.Diagnostic.CommandResponseProtocol.Entities;
+using SystemDiagnostic.Diagnostic.Server.Services.Interfaces;
 
 namespace SystemDiagnostic.Diagnostic.Server.Controllers
 {
-    public class AuthorizeController
+    class AuthorizeController
     {
-        public AuthorizeController() { }
+        private readonly IAuthorizeService _authorizeService;
+
+        public AuthorizeController(IAuthorizeService authorizeService)
+        {
+            _authorizeService = authorizeService;
+        }
 
         public ServerResponseInformation Authorize(ClientLoginModel clientLogin)
         {
-            if (clientLogin.Login != "Login")
+            if (!_authorizeService.CheckLogin(clientLogin.Login))
                 return new ServerResponseInformation
                 {
                     Status = 2,
                     SerializedData = "Bad Login"
                 };
-            else if (clientLogin.Password != "Password")
+            else if (!_authorizeService.CheckAuthorize(clientLogin.Login,clientLogin.Password))
                 return new ServerResponseInformation
                 {
                     Status = 2,
