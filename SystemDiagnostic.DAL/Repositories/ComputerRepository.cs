@@ -15,12 +15,12 @@ namespace SystemDiagnostic.DAL.Repositories
 
         public bool Auhtorize(string login, string password)
         {
-            return _DbSet.FirstOrDefault(c => c.Login == login && c.Password == password) == null;
+            return _DbSet.FirstOrDefault(c => c.Login == login && c.Password == password) != null;
         }        
 
         public bool CheckUniqueLogin(string login)
         {
-            return _DbSet.FirstOrDefault(c => c.Login == login) == null;
+            return _DbSet.FirstOrDefault(c => c.Login == login) != null;
         }
 
         public Computer GetByLogin(string login)
@@ -30,7 +30,7 @@ namespace SystemDiagnostic.DAL.Repositories
 
         public string GetIdByLogin(string login)
         {
-            return _DbSet.Find(login)?.Id;
+            return _DbSet.FirstOrDefault(c => c.Login == login)?.Id;
         }
 
         public IEnumerable<Computer> GetOnlineComputers()

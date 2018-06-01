@@ -1,4 +1,5 @@
 ﻿using System;
+using AutoMapper;
 using System.Net;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -31,8 +32,8 @@ namespace SystemDiagnostic.Diagnostic.Server
         private static void ConfigureServices(IServiceCollection service)
         {
             string connection = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=SystemDiagnostic;Integrated Security=True";
-            service.AddDbContext<ApplicationDataBaseContext>(options => options.UseSqlServer(connection ,
-                    b => b.MigrationsAssembly("SystemDiagnostic.DataBaseMigration")))
+            service
+                .AddDbContext<ApplicationDataBaseContext>(options => options.UseSqlServer(connection))
                 .AddTransient<IUnitOfWork,UnitOfWork>()
                 .AddTransient<IAuthorizeService,AuthorizeService>()
                 .AddTransient<IComputerSystemService,ComputerSystemService>()
@@ -41,7 +42,9 @@ namespace SystemDiagnostic.Diagnostic.Server
                 .AddTransient<AuthorizeController>()
                 .AddTransient<ComputerController>()
                 .AddTransient<TestController>()
-                .AddTransient<ProcessesController>();
+                .AddTransient<ProcessesController>()
+                .AddAutoMapper()
+                ;
         }
 
         private static RunPropertyModel InputAdress()

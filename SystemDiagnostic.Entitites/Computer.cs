@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Diagnostics;
 using System.Text;
 using SystemDiagnostic.Entitites.ComputerComponents;
+using SystemDiagnostic.Entitites.MonitoringInformation;
 using SystemDiagnostic.Entitites.OperatingInformation;
 
 namespace SystemDiagnostic.Entitites
