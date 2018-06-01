@@ -28,6 +28,11 @@ namespace SystemDiagnostic.DAL.Repositories
             return _DbSet.FirstOrDefault(c => c.Login == login);
         }
 
+        public string GetIdByLogin(string login)
+        {
+            return _DbSet.Find(login)?.Id;
+        }
+
         public IEnumerable<Computer> GetOnlineComputers()
         {
             return _DbSet.Where(c => c.IsConnected);

@@ -8,5 +8,6 @@ namespace SystemDiagnostic.DAL.Interfaces
     public interface IPhysicalMemoryRepository :IRepository<PhysicalMemory>
     {
         IEnumerable<PhysicalMemory> GetPhysicalMemoriesByComputerId(string computerId);
+        IEnumerable<PhysicalMemory> GetPhysicalMemoriesByComputerLogin(string computerLogin);
     }
 }

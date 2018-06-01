@@ -14,8 +14,8 @@ namespace SystemDiagnostic.Entitites.ComputerComponents
         [Required]
         [ForeignKey("Computer")]
         public string ComputerId { get; set; }
-        [Required]
-        public string ComputerVideoCardId { get; set; }
+        public Computer Computer { get; set; }
+
         [Required]
         public string Name { get; set; }
         public string VideoProcessor { get; set; }

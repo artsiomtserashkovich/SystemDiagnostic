@@ -14,6 +14,8 @@ namespace SystemDiagnostic.Entitites.ComputerComponents
         [Required]
         [ForeignKey("Computer")]
         public string ComputerId { get; set; }
+        public Computer Computer { get; set; }
+
         [Required]
         public string ComputerMotherBoardId { get; set; }
         public string Product { get; set; }

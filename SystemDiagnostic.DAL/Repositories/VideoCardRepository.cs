@@ -17,5 +17,10 @@ namespace SystemDiagnostic.DAL.Repositories
         {
             return _DbSet.Where(c => c.ComputerId == computerId);
         }
+
+        public IEnumerable<VideoCard> GetVideoCardsByComputerLogin(string computerLogin)
+        {
+            return _DbSet.Where(c => c.Computer.Login == computerLogin);
+        }
     }
 }

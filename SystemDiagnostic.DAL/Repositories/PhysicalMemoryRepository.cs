@@ -17,5 +17,10 @@ namespace SystemDiagnostic.DAL.Repositories
         {
             return _DbSet.Where(p => p.ComputerId == computerId);
         }
+
+        public IEnumerable<PhysicalMemory> GetPhysicalMemoriesByComputerLogin(string computerLogin)
+        {
+            return _DbSet.Where(p => p.Computer.Login == computerLogin);
+        }
     }
 }

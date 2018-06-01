@@ -17,5 +17,10 @@ namespace SystemDiagnostic.DAL.Repositories
         {
             return _DbSet.Where(d => d.ComputerId == computerId);
         }
+
+        public IEnumerable<DiskDrive> GetDiskDrivesByComputerLogin(string computerLogin)
+        {
+            return _DbSet.Where(d => d.Computer.Login == computerLogin);
+        }
     }
 }

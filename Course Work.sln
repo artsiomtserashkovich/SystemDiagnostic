@@ -18,7 +18,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemDiagnostic.DAL", "Sys
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemDiagnostic.WebAPI", "SystemDiagnostic.WebAPI\SystemDiagnostic.WebAPI.csproj", "{CE29202B-6722-4E65-A58B-A4FA91297829}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDiagnostic.BLL", "SystemDiagnostic.BLL\SystemDiagnostic.BLL.csproj", "{64F1B4D0-11C5-4D1F-BB1C-A12403E1533A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SystemDiagnostic.BLL", "SystemDiagnostic.BLL\SystemDiagnostic.BLL.csproj", "{64F1B4D0-11C5-4D1F-BB1C-A12403E1533A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDiagnostic.DataBaseMigration", "SystemDiagnostic.DataBaseMigration\SystemDiagnostic.DataBaseMigration.csproj", "{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -138,6 +140,18 @@ Global
 		{64F1B4D0-11C5-4D1F-BB1C-A12403E1533A}.Release|x64.Build.0 = Release|Any CPU
 		{64F1B4D0-11C5-4D1F-BB1C-A12403E1533A}.Release|x86.ActiveCfg = Release|Any CPU
 		{64F1B4D0-11C5-4D1F-BB1C-A12403E1533A}.Release|x86.Build.0 = Release|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Debug|x64.Build.0 = Debug|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Debug|x86.Build.0 = Debug|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Release|x64.ActiveCfg = Release|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Release|x64.Build.0 = Release|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Release|x86.ActiveCfg = Release|Any CPU
+		{4BD58349-C4AD-4695-9AC4-2AEE6EDA425F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,23 +9,21 @@ namespace SystemDiagnostic.Diagnostic.Server.Services
 {
     class AuthorizeService : IAuthorizeService
     {
-        private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
-        public AuthorizeService(IUnitOfWork unitOfWork, IMapper mapper)
+        public AuthorizeService(IUnitOfWork unitOfWork)
         {
-            _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
 
         public bool CheckAuthorize(string computerLogin, string computerPassword)
         {
-            throw new NotImplementedException();
+            return _unitOfWork.Computers.Auhtorize(computerLogin, computerPassword);
         }
 
         public bool CheckLogin(string computerLogin)
         {
-            throw new NotImplementedException();
+            return _unitOfWork.Computers.CheckUniqueLogin(computerLogin);
         }
     }
 }

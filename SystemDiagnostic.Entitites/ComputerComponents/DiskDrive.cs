@@ -14,6 +14,8 @@ namespace SystemDiagnostic.Entitites.ComputerComponents
         [Required]
         [ForeignKey("Computer")]
         public string ComputerId { get; set; }
+        public Computer Computer { get; set; }
+
         public string ComputerDiskDriveId { get; set; }
         public string Model { get; set; }
         public double SizeGB { get; set; }

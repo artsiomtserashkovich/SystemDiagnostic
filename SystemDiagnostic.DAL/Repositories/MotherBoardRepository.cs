@@ -17,5 +17,10 @@ namespace SystemDiagnostic.DAL.Repositories
         {
             return _DbSet.FirstOrDefault(c => c.ComputerId == computerId);
         }
+
+        public MotherBoard GetMotherBoardByComputerLogin(string computerLogin)
+        {
+            return _DbSet.FirstOrDefault(m => m.Computer.Login == computerLogin);
+        }
     }
 }

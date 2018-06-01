@@ -6,8 +6,11 @@
     <ProjectReference Include="..\SystemDiagnostic.Diagnostic.CommandResponseProtocol\SystemDiagnostic.Diagnostic.CommandResponseProtocol.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.0-alpha-0001" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.0-preview2-final" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.1.0" />
   </ItemGroup>
   <PropertyGroup>
     <OutputType>Exe</OutputType>

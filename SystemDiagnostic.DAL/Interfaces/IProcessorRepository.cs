@@ -8,5 +8,6 @@ namespace SystemDiagnostic.DAL.Interfaces
     public interface IProcessorRepository:IRepository<Processor>
     {
         Processor GetProcessorByComputerId(string computerId);
+        Processor GetProcessorByComputerLogin(string computerLogin);
     }
 }

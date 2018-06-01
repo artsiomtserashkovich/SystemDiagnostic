@@ -11,5 +11,6 @@ namespace SystemDiagnostic.DAL.Interfaces
         IEnumerable<Computer> GetOnlineComputers();
         bool Auhtorize(string login, string password);
         bool CheckUniqueLogin(string Login);
+        string GetIdByLogin(string login);
     }
 }

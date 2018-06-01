@@ -8,5 +8,6 @@ namespace SystemDiagnostic.DAL.Interfaces
     public interface IDiskDriveRepository : IRepository<DiskDrive>
     {
         IEnumerable<DiskDrive> GetDiskDrivesByComputerId(string computerId);
+        IEnumerable<DiskDrive> GetDiskDrivesByComputerLogin(string computerLogin);
     }
 }

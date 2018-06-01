@@ -9,7 +9,7 @@ namespace SystemDiagnostic.Entitites.MonitoringInformation
     public class ProcessInformation
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string Id { get; set; }
         [Required]
         [ForeignKey("Process")]

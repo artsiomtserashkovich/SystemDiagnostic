@@ -8,5 +8,6 @@ namespace SystemDiagnostic.DAL.Interfaces
     public interface IComputerSystemRepository : IRepository<ComputerSystem>
     {
         ComputerSystem GetByComputerId(string computerId);
+        ComputerSystem GetByComputerLogin(string computerLogin);
     }
 }

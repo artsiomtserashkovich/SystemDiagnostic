@@ -11,6 +11,6 @@ namespace SystemDiagnostic.Diagnostic.Server.Services.Interfaces
         void UpdateProcessor(string computerLogin, ProcessorDTO processor);
         void UpdateVideoCards(string computerLogin, IEnumerable<VideoCardDTO> videoCards);
         void UpdateMotherBoard(string computerLogin, MotherBoardDTO motherBoard);
-        void UpdatePhysicalMemories(string computerLogin, IEnumerable<PhysicalMemoryDTO> physicalMemories);        
+        void UpdatePhysicalMemories(string computerLogin, IEnumerable<PhysicalMemoryDTO> physicalMemories);
     }
 }

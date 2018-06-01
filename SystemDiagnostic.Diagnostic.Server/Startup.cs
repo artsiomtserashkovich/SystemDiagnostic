@@ -30,8 +30,9 @@ namespace SystemDiagnostic.Diagnostic.Server
 
         private static void ConfigureServices(IServiceCollection service)
         {
-            string connection = "";
-            service.AddDbContext<ApplicationDataBaseContext>(options => options.UseSqlServer(connection))
+            string connection = "Data Source=localhost\\SQLEXPRESS;Initial Catalog=SystemDiagnostic;Integrated Security=True";
+            service.AddDbContext<ApplicationDataBaseContext>(options => options.UseSqlServer(connection ,
+                    b => b.MigrationsAssembly("SystemDiagnostic.DataBaseMigration")))
                 .AddTransient<IUnitOfWork,UnitOfWork>()
                 .AddTransient<IAuthorizeService,AuthorizeService>()
                 .AddTransient<IComputerSystemService,ComputerSystemService>()

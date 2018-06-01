@@ -19,6 +19,7 @@ namespace SystemDiagnostic.Entitites
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
         public Processor Processor { get; set; }
         public MotherBoard MotherBoard { get; set; }
         public ICollection<DiskDrive> DiskDrives { get; set; }
