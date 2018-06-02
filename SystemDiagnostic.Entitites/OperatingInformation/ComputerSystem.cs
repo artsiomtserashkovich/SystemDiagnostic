@@ -15,8 +15,7 @@ namespace SystemDiagnostic.Entitites.OperatingInformation
         [ForeignKey("Computer")]
         public string ComputerId { get; set; }
         public Computer Computer { get; set; }
-
-        public string OperatingSystemName { get; set; }
+        
         public string ComputerName { get; set; }
         public string DNSHostName { get; set; }
         public string CurrentUsername { get; set; }

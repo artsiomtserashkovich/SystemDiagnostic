@@ -11,7 +11,7 @@ using SystemDiagnostic.DAL.Data;
 namespace SystemDiagnostic.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDataBaseContext))]
-    [Migration("20180601165749_InitialDataBase")]
+    [Migration("20180602095054_InitialDataBase")]
     partial class InitialDataBase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -252,8 +252,6 @@ namespace SystemDiagnostic.WebAPI.Migrations
                     b.Property<string>("CurrentUsername");
 
                     b.Property<string>("DNSHostName");
-
-                    b.Property<string>("OperatingSystemName");
 
                     b.HasKey("Id");
 

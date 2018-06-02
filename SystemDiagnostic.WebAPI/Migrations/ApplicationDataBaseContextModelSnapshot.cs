@@ -252,8 +252,6 @@ namespace SystemDiagnostic.WebAPI.Migrations
 
                     b.Property<string>("DNSHostName");
 
-                    b.Property<string>("OperatingSystemName");
-
                     b.HasKey("Id");
 
                     b.HasIndex("ComputerId")

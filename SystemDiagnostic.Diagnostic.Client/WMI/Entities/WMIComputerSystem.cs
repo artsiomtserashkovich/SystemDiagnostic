@@ -10,10 +10,7 @@ namespace SystemDiagnostic.Diagnostic.Client.WMI.Entities
         public string DNSHostName {get;set;}
         
         [WMI(WMIComputerSystemProperties.Name)]
-        public string Name {get;set;}
-
-        [WMI(WMIComputerSystemProperties.SystemFamily)]
-        public string SystemFamily {get;set;}
+        public string Name {get;set;}        
 
         [WMI(WMIComputerSystemProperties.UserName)]
         public string UserName{get;set;}        

@@ -58,7 +58,6 @@ namespace SystemDiagnostic.Diagnostic.Server.MapperProfile
                 .ForMember(p => p.ComputerName, m => m.MapFrom(p => p.ComputerName))
                 .ForMember(p => p.CurrentUsername, m => m.MapFrom(p => p.CurrentUsername))
                 .ForMember(p => p.DNSHostName, m => m.MapFrom(p => p.DNSHostName))
-                .ForMember(p => p.OperatingSystemName, m => m.MapFrom(p => p.OSName))
                 .ForMember(d => d.Id, m => m.Ignore());
 
             CreateMap<ProcessInformationDTO, ProcessInformation>()

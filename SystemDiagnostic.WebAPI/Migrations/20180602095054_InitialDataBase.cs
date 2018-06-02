@@ -30,8 +30,7 @@ namespace SystemDiagnostic.WebAPI.Migrations
                     ComputerId = table.Column<string>(nullable: false),
                     ComputerName = table.Column<string>(nullable: true),
                     CurrentUsername = table.Column<string>(nullable: true),
-                    DNSHostName = table.Column<string>(nullable: true),
-                    OperatingSystemName = table.Column<string>(nullable: true)
+                    DNSHostName = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

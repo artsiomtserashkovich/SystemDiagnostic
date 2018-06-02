@@ -15,8 +15,7 @@ namespace SystemDiagnostic.Diagnostic.Client.MapperProfile
             CreateMap<WMIComputerSystem, ComputerSystemDTO>()
                 .ForMember(d => d.ComputerName, m => m.MapFrom(k => k.Name))
                 .ForMember(d => d.CurrentUsername, m => m.MapFrom(k => k.UserName))
-                .ForMember(d => d.DNSHostName, m => m.MapFrom(k => k.DNSHostName))
-                .ForMember(d => d.OSName, m => m.MapFrom(k => k.SystemFamily));
+                .ForMember(d => d.DNSHostName, m => m.MapFrom(k => k.DNSHostName));
 
             CreateMap<WMIProcessor, ProcessorDTO>()
                 .ForMember(d => d.Id, m => m.MapFrom(k => k.Id))
