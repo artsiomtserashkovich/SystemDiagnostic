@@ -56,6 +56,29 @@ namespace SystemDiagnostic.Diagnostic.Server.Controllers
             }
         }
 
+        public ServerResponseInformation RecieveComputerSystemInformation
+            (ComputerSystemDTO computerSystem,ClientLoginModel clientLogin)
+        {
+            try
+            {
+                _computerSystemService.UpdateComputerSystem(clientLogin.Login,computerSystem);
+                return new ServerResponseInformation
+                {
+                    Status = 1,
+                    SerializedData = "Success"
+                };
+            }
+            catch (ServerServicesException exception)
+            {
+                return new ServerResponseInformation
+                {
+                    Status = -1,
+                    SerializedData = exception.Message
+                };
+            }
+
+        }
+
         public ServerResponseInformation RecieveComputerOperatingInformation
             (ComputerOperatingInformationDTO computerOperatingInformation, ClientLoginModel clientLogin)
         {

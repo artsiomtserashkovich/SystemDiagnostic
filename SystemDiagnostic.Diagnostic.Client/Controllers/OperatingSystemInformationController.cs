@@ -29,6 +29,11 @@ namespace SystemDiagnostic.Diagnostic.Client.Controllers
             return _processInformationService.GetProcessInformationByName(name);
         }
 
+        public ComputerSystemDTO GetComputerSystemInformation()
+        {
+            return _computerSystemService.GetComputerSystemInformation();
+        }
+
         public ComputerOperatingInformationDTO GetComputerOperatingInformation(){
             IEnumerable<ProcessPerfomanceDTO> processesPerfomance = _processPerfomanceService
                 .GetTopCPUUsageProcessesPerfomances(10);

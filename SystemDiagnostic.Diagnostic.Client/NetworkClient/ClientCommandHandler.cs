@@ -35,6 +35,15 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
             return JsonConvert.SerializeObject(chInformation);
         }
 
+        [CRCommandHandler("GetComputerSystemInformation")]
+        public string GetComputerSystemInformation(ClientCommandRequest clientCommandRequest)
+        {
+            OperatingSystemInformationController operatingSystemInformationController =
+                (OperatingSystemInformationController)_serviceProvider.GetService(typeof(OperatingSystemInformationController));
+            ComputerSystemDTO computerSystem = operatingSystemInformationController.GetComputerSystemInformation();
+            return JsonConvert.SerializeObject(computerSystem);
+        }
+
         [CRCommandHandler("GetTopCPUUsageProcessesPerfomance")]
         public string GetTopCPUUsageProcessesPerfomance(ClientCommandRequest clientCommandRequest)
         {

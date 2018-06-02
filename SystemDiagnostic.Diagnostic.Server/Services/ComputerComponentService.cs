@@ -38,19 +38,13 @@ namespace SystemDiagnostic.Diagnostic.Server.Services
 
         public void UpdateMotherBoard(string computerLogin, MotherBoardDTO motherBoard)
         {
-            MotherBoard _motherBoard = _unitOfWork.MotherBoards
+            MotherBoard oldMotherBoard = _unitOfWork.MotherBoards
                 .GetMotherBoardByComputerLogin(computerLogin);
-            if(_motherBoard != null)
-            {
-                _unitOfWork.MotherBoards.Remove(_motherBoard);
-                _motherBoard = _mapper.Map<MotherBoardDTO, MotherBoard>(motherBoard, _motherBoard);
-            }
-            else
-            {
-                _motherBoard = _mapper.Map<MotherBoardDTO, MotherBoard>(motherBoard);
-                _motherBoard.ComputerId = _unitOfWork.Computers.GetIdByLogin(computerLogin);
-            }
-            _unitOfWork.MotherBoards.Add(_motherBoard);
+            if(oldMotherBoard != null)            
+                _unitOfWork.MotherBoards.Remove(oldMotherBoard);            
+            MotherBoard newMotherBoard = _mapper.Map<MotherBoardDTO, MotherBoard>(motherBoard);
+            newMotherBoard.ComputerId = _unitOfWork.Computers.GetIdByLogin(computerLogin);           
+            _unitOfWork.MotherBoards.Add(newMotherBoard);
             _unitOfWork.SaveChanges();
         }
 
@@ -73,18 +67,12 @@ namespace SystemDiagnostic.Diagnostic.Server.Services
 
         public void UpdateProcessor(string computerLogin, ProcessorDTO processor)
         {
-            Processor _processor = _unitOfWork.Processors.GetProcessorByComputerLogin(computerLogin);
-            if(_processor != null)
-            {
-                _unitOfWork.Processors.Remove(_processor);
-                _processor = _mapper.Map<ProcessorDTO, Processor>(processor, _processor);
-            }
-            else
-            {
-                _processor = _mapper.Map<ProcessorDTO, Processor>(processor);
-                _processor.ComputerId = _unitOfWork.Computers.GetIdByLogin(computerLogin);
-            }
-            _unitOfWork.Processors.Add(_processor);
+            Processor oldProcessor = _unitOfWork.Processors.GetProcessorByComputerLogin(computerLogin);
+            if(oldProcessor != null)            
+                _unitOfWork.Processors.Remove(oldProcessor);
+            Processor newProcessor = _mapper.Map<ProcessorDTO, Processor>(processor);
+            newProcessor.ComputerId = _unitOfWork.Computers.GetIdByLogin(computerLogin);            
+            _unitOfWork.Processors.Add(newProcessor);
             _unitOfWork.SaveChanges();
         }
 

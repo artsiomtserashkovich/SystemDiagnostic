@@ -37,6 +37,7 @@ namespace SystemDiagnostic.Diagnostic.Client
 
         private static void ConfigureScheduleManager(IScheduleCommandManager scheduleCommandManager)
         {
+            scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "GetComputerSystemInformation" }, 5, false);
             scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "GetComputerComponent" }, 10, false);
             scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "GetTopMemoryUsageProcesses" }, 90, true);
             scheduleCommandManager.AddTimer(new ClientCommandRequest { Command = "GetTopCPUUsageProcesses" }, 60, true);

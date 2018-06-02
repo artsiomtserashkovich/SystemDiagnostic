@@ -22,28 +22,15 @@ namespace SystemDiagnostic.Diagnostic.Server.Services
 
         public void UpdateComputerSystem(string computerLogin, ComputerSystemDTO computerSystem)
         {
-            ComputerSystem _computerSystem = _unitOfWork.ComputerSystems
+            ComputerSystem oldComputerSystem = _unitOfWork.ComputerSystems
                 .GetByComputerLogin(computerLogin);
-            if(_computerSystem == null)
-            {
-                AddComputerSystem(computerLogin, computerSystem);
-            }
-            else
-            {
-                _computerSystem = _mapper.Map<ComputerSystemDTO, ComputerSystem>
-                    (computerSystem, _computerSystem);
-                _unitOfWork.ComputerSystems.Update(_computerSystem);
-                _unitOfWork.SaveChanges();
-            }
-        }
-
-        public void AddComputerSystem(string computerLogin,ComputerSystemDTO computerSystem)
-        {
-            ComputerSystem _computerSystem = _mapper.Map<ComputerSystemDTO, ComputerSystem>
-                (computerSystem);
-            _computerSystem.ComputerId = _unitOfWork.Computers.GetIdByLogin(computerLogin);
-            _unitOfWork.ComputerSystems.Add(_computerSystem);
-            _unitOfWork.SaveChanges();
+            if (oldComputerSystem != null)
+                _unitOfWork.ComputerSystems.Remove(oldComputerSystem);
+            ComputerSystem newComputerSystem = _mapper.Map<ComputerSystemDTO, ComputerSystem>
+                    (computerSystem);
+            newComputerSystem.ComputerId = _unitOfWork.Computers.GetIdByLogin(computerLogin);
+            _unitOfWork.ComputerSystems.Update(newComputerSystem);
+            _unitOfWork.SaveChanges();            
         }
     }
 }

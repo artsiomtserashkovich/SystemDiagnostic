@@ -21,8 +21,8 @@ namespace SystemDiagnostic.WebAPI.Controllers
         {
             _unitOfWork.Computers.Add(new Entitites.Computer
             {
-                Login = "Test",
-                Password = "Test"
+                Login = "HomeDesktop",
+                Password = "9173101"
             });
             _unitOfWork.SaveChanges();
             return new string[] { "value1", "value2" };

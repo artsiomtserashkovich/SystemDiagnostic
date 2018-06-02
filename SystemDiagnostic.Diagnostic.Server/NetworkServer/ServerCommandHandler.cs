@@ -87,6 +87,23 @@ namespace SystemDiagnostic.Diagnostic.Server.NetworkServer
 
         }
 
+        [CRCommandHandler("GetComputerSystemInformation")]
+        public ServerResponseInformation GetComputerSystemInformation
+            (ClientCommandInformation clientCommand)
+        {
+            AuthorizeController authorizeController = (AuthorizeController)_serviceProvider
+                .GetService(typeof(AuthorizeController));
+            var resAuthorize = authorizeController.Authorize(clientCommand.ClientLogin);
+            if (resAuthorize != null)
+                return resAuthorize;
+
+            ComputerSystemDTO computerSystem = JsonConvert
+                .DeserializeObject<ComputerSystemDTO>(clientCommand.SerializedData);
+            ComputerController processesController = (ComputerController)_serviceProvider
+                .GetService(typeof(ComputerController));
+            return processesController.RecieveComputerSystemInformation(computerSystem,clientCommand.ClientLogin);
+        }
+
         [CRCommandHandler("GetTopCPUUsageProcesses")]
         public ServerResponseInformation GetTopCPUUsageProcesses
             (ClientCommandInformation clientCommand)
