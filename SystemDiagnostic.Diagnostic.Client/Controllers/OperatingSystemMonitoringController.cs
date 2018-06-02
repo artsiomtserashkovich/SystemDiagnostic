@@ -21,14 +21,14 @@ namespace SystemDiagnostic.Diagnostic.Client.Controllers
 
         public IEnumerable<ProcessPerfomanceDTO> GetTopCPUUsageProcessesPerfomance()
         {
-            return _processPerfomanceService.GetTopCPUUsageProcessesPerfomances(10);
+            return _processPerfomanceService.GetTopCPUUsageProcessesPerfomances(20);
         }
 
         public IEnumerable<ProcessDTO> GetTopCPUUsageProcesses()
         {
             IEnumerable<ProcessPerfomanceDTO> processesPerfomance = _processPerfomanceService
                 .GetTopCPUUsageProcessesPerfomances(10);
-            IList<ProcessDTO> processes = new List<ProcessDTO>(10);
+            IList<ProcessDTO> processes = new List<ProcessDTO>(20);
             foreach (ProcessPerfomanceDTO processPerfomance in processesPerfomance)
             {
                 ProcessInformationDTO processInformation = _processInformationService
