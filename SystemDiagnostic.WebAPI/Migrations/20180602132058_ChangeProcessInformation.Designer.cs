@@ -11,9 +11,10 @@ using SystemDiagnostic.DAL.Data;
 namespace SystemDiagnostic.WebAPI.Migrations
 {
     [DbContext(typeof(ApplicationDataBaseContext))]
-    partial class ApplicationDataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20180602132058_ChangeProcessInformation")]
+    partial class ChangeProcessInformation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

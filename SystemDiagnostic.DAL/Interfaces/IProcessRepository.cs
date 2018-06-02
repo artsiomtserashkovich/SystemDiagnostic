@@ -8,5 +8,6 @@ namespace SystemDiagnostic.DAL.Interfaces
     public interface IProcessRepository : IRepository<Process>
     { 
         IEnumerable<Process> GetProcessesByComputerId(string computerId);
+        Process GetProcessByComputerIdAndName(string computerId, string Name);
     }
 }

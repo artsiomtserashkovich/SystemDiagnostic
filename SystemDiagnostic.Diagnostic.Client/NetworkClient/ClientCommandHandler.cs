@@ -101,7 +101,5 @@ namespace SystemDiagnostic.Diagnostic.Client.NetworkClient
                 .GetProcessInformationByName(clientCommandRequest.Arguments);
             return JsonConvert.SerializeObject(processDTO);
         }
-
-
     }
 }

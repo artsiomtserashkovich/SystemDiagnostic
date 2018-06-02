@@ -69,6 +69,7 @@ namespace SystemDiagnostic.Diagnostic.Server.MapperProfile
             CreateMap<ProcessPerfomanceDTO, ProcessPerfomance>()
                 .ForMember(p => p.PercentCPUUsage, m => m.MapFrom(p => p.PercentCPUUsage))
                 .ForMember(p => p.RamMemoryUsageMB, m => m.MapFrom(p => p.RamMemoryUsageMB))
+                .ForMember(p => p.ComputerProcessId, m => m.MapFrom(p => p.ProcessId))
                 .ForMember(d => d.Id, m => m.Ignore());                
         }
     }
