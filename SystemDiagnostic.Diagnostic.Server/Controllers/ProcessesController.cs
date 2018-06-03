@@ -8,7 +8,7 @@ using SystemDiagnostic.Diagnostic.Server.Services.Exceptions;
 
 namespace SystemDiagnostic.Diagnostic.Server.Controllers
 {
-    class ProcessesController
+    class ProcessesController   
     {
 
         private readonly IProcessService _processService;

@@ -4,4 +4,15 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.0-alpha-0001" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SystemDiagnostic.DAL\SystemDiagnostic.DAL.csproj" />
+    <ProjectReference Include="..\SystemDiagnostic.Entitites\SystemDiagnostic.Entitites.csproj" />
+    <ProjectReference Include="..\SystemDiagnostic.ViewModel\SystemDiagnostic.ViewModel.csproj" />
+  </ItemGroup>
+
 </Project>
